@@ -1,0 +1,42 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "{\n\"Plant_Name\" : \"Hybrid.Durtek Lanka\",\n\"Capacity\" : {\n\"Capacity\" : 300,\n\"BESS Capacity\" : null,\n\"DG Capacity\" : null\n},\n\"Energy_System\" : \"Captive\",\n\"Latitude\" : 7.1951501,\n\"Longitude\" : 80.0409392,\n\"AC_Capacity\" : 300\n}",
+      "allowWhiteLabeling" : true,
+      "homeDashboardId" : null,
+      "homeDashboardHideToolbar" : true
+    },
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : "Sri Lanka",
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "email" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    },
+    "name" : "Hybrid.Durtek Lanka 300kW",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "parentCustomerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "phone" : null,
+    "state" : null,
+    "title" : "Hybrid.Durtek Lanka 300kW",
+    "zip" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
