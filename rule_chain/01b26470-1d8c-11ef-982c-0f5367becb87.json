@@ -1,0 +1,101 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "01ebeb00-1d8c-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "01b26470-1d8c-11ef-982c-0f5367becb87"
+    },
+    "name" : "Saving",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 712,
+        "layoutY" : 153
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "01e81a70-1d8c-11ef-982c-0f5367becb87"
+      },
+      "name" : "yy",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 343,
+        "layoutY" : 148
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "INV_DailyEnergy_Total_cal",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "Generator_Daily_energy_sum",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "abs(y-x)*84.35",
+        "result" : {
+          "type" : "MESSAGE_BODY",
+          "key" : "saving",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "01ebeb00-1d8c-11ef-982c-0f5367becb87"
+      },
+      "name" : "saving",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

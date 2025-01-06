@@ -26,10 +26,10 @@
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "583ee050-a72c-11ef-848d-f5df72fbc0d4"
     },
-    "label" : "Inverter-16",
-    "name" : "Mal660-INV-16",
+    "label" : "Inverter-13",
+    "name" : "Mal660-INV-13",
     "ownerId" : {
       "entityType" : "CUSTOMER",
       "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
@@ -38,13 +38,13 @@
     "type" : "MAL_INV"
   },
   "credentials" : {
-    "credentialsId" : "ubybmhS9EL7BHhVvpasV",
+    "credentialsId" : "p7fR4A3UbzrQTPU3vdaT",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
   "relations" : [ {
     "additionalInfo" : [ {
-      "label" : "Inverter-16"
+      "label" : "Inverter-13"
     } ],
     "from" : {
       "entityType" : "ASSET",
@@ -52,7 +52,7 @@
     },
     "to" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "583ee050-a72c-11ef-848d-f5df72fbc0d4"
     },
     "type" : "Contains",
     "typeGroup" : "COMMON"
@@ -63,7 +63,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1734624767995,
+      "lastUpdateTs" : 1734624768042,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -79,7 +79,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1736159084720,
+      "lastUpdateTs" : 1736159084721,
       "longValue" : 1736159083093,
       "strValue" : null
     } ],

@@ -1,0 +1,42 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "{\n\"Plant_Name\" : \"PV.BP 2\",\n\"Capacity\" : {\n\"Capacity\" : 72\n},\n\"Energy_System\" : \"Grid Connected\",\n\"AC_Capacity\" : 72,\n\"DC_Capacity\" : 72,\n\"Latitude\":13.7774154,\n\"Longitude\":77.3136672,\n\"Inverter_Make_Model\" : \"Sungrow 125 HX\",\n\"Inverter_AC_Capacity\":120,\n\"Inverter_DC_Capacity\":125,\n\"DG_Make_Model\":\"Cumins ABC\",\n\"DG_AC_Capacity\":1000\n}",
+      "allowWhiteLabeling" : true,
+      "homeDashboardId" : null,
+      "homeDashboardHideToolbar" : true
+    },
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "email" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "f90c3540-86ee-11ef-b45a-63918778ec19"
+    },
+    "name" : "PV.Zakir BP 2",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "parentCustomerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "phone" : null,
+    "state" : null,
+    "title" : "PV.Zakir BP 2",
+    "zip" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

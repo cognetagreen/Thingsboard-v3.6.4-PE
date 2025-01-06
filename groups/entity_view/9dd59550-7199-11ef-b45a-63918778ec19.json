@@ -1,0 +1,45 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "",
+      "isPublic" : true,
+      "publicCustomerId" : "ba6ef8a0-1f0f-11ef-982c-0f5367becb87"
+    },
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "type",
+        "sortOrder" : "NONE"
+      } ],
+      "settings" : { },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : false,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "9dd59550-7199-11ef-b45a-63918778ec19"
+    },
+    "name" : "DL300_INV",
+    "ownerId" : {
+      "entityType" : "TENANT",
+      "id" : "e70f33c0-1d7f-11ef-982c-0f5367becb87"
+    },
+    "type" : "ENTITY_VIEW"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "groupEntities" : true
+}

@@ -1,0 +1,41 @@
+{
+  "entityType" : "ENTITY_VIEW",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    },
+    "endTimeMs" : 0,
+    "entityId" : {
+      "entityType" : "DEVICE",
+      "id" : "b9199760-1d86-11ef-982c-0f5367becb87"
+    },
+    "externalId" : null,
+    "keys" : {
+      "attributes" : {
+        "cs" : null,
+        "sh" : null,
+        "ss" : null
+      },
+      "timeseries" : [ "SL_Grid_Daily_Energy_Import_kWh", "SL_Grid_Total_Energy_Import_kWh", "SL_Grid_Daily_Energy_Export_kWh", "SL_Grid_Total_Energy_Export_kWh", "SL_Bus_B_frequency_L3", "SL_Bus_B_frequency_L2", "SL_Bus_B_frequency_L1", "SL_Bus_B_voltage_L3_N", "SL_Bus_B_voltage_L2_N", "SL_Bus_B_voltage_L1_N", "SL_Bus_B_voltage_L3_L1", "SL_Bus_B_voltage_L2_L3", "SL_Bus_B_voltage_L1_L2", "SL_Grid_PF", "SL_Grid_Power_kW", "SL_Generator_PF", "SL_Generator_Export_active_energy_counter_total", "SL_Generator_Export_active_energy_counter_day", "SL_Generator_power_L3", "SL_Generator_power_L2", "SL_Generator_current_L3", "SL_Generator_current_L2", "SL_Generator_current_L1", "SL_Generator_frequency_L3", "SL_Generator_frequency_L2", "SL_Generator_frequency_L1", "SL_Generator_voltage_L3_N", "SL_Generator_voltage_L2_N", "SL_Generator_voltage_L1_N", "SL_Generator_voltage_L3_L1", "SL_Generator_voltage_L1_L2", "SL_Generator_voltage_L2_L3" ]
+    },
+    "name" : "DL_DG",
+    "startTimeMs" : 0,
+    "type" : "ASSETS",
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "id" : {
+      "entityType" : "ENTITY_VIEW",
+      "id" : "8128aca0-1db4-11ef-982c-0f5367becb87"
+    },
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

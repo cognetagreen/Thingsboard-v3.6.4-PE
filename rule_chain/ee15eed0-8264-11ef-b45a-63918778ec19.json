@@ -1,0 +1,824 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "2c169fd0-8266-11ef-b45a-63918778ec19"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "ee15eed0-8264-11ef-b45a-63918778ec19"
+    },
+    "name" : "Inverter Availability",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "True"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 19,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 5,
+      "type" : "True"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 13,
+      "type" : "True"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 20,
+      "type" : "True"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 22,
+      "toIndex" : 23,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 24,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 25,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 294,
+        "layoutY" : 41
+      },
+      "configuration" : {
+        "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "POST_TELEMETRY_REQUEST", "TO_SERVER_RPC_REQUEST" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c169fd0-8266-11ef-b45a-63918778ec19"
+      },
+      "name" : "m1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 515,
+        "layoutY" : 43
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"DURTEK_INV\") {\n    return true;\n} else if(metadata.deviceType == \"BR_INV\") {\n    return true;\n} else if(metadata.deviceType == \"MAL_INV\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9d5f5380-8266-11ef-b45a-63918778ec19"
+      },
+      "name" : "INV",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 378,
+        "layoutY" : 119
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\nvar replace = metadata.deviceName.split(\"-\")[2];\nvar startrHr = 6;\nvar endHr = 19;\nvar TotalOperationMin = (endHr - startrHr) * 60;\nvar currentHr = new Date().getHours();\n\nif(currentHr >= startrHr && currentHr <= endHr) {\n    newMsg.Inverter_Availability = msg.Inverter_Availability - (msg.AC_Active_Power_Watt > 0 ? 0 : (5/TotalOperationMin)*100);\n    newMsg[\"Inverter_Availability_\"+replace] = newMsg.Inverter_Availability; // This is for cal to aggregate\n}\n var hrs = new Date().getHours();\n \n if(hrs == 0) {\n     newMsg.Inverter_Availability = 100; // It will refresh the Daily Availability\n      newMsg[\"Inverter_Availability_\"+replace] = newMsg.Inverter_Availability;\n }\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\n\n// ****** Previous Logic ***********\n\n// if(msg[key] > 0) {\n//     newMsg.Inverter_Availability = (5/720)*100 + msg.Inverter_Availability;\n//     newMsg[\"Inverter_Availability_\"+replace] = newMsg.Inverter_Availability; // This is for cal to aggregate\n// }",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ab6edfe0-8266-11ef-b45a-63918778ec19"
+      },
+      "name" : "Avail",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 748,
+        "layoutY" : 118
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8f367d50-8267-11ef-b45a-63918778ec19"
+      },
+      "name" : "ddda",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 768,
+        "layoutY" : 41
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Inverter_Availability" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f0a12df0-82ae-11ef-b45a-63918778ec19"
+      },
+      "name" : "avail fetch",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 35,
+        "layoutY" : 308
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "Durtek_Device",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "faf80d30-82b0-11ef-b45a-63918778ec19"
+      },
+      "name" : "To Durtek Device",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 37,
+        "layoutY" : 370
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "242fcf30-82b1-11ef-b45a-63918778ec19"
+      },
+      "name" : "dew",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 36,
+        "layoutY" : 432
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Inverter_Availability_1", "Inverter_Availability_2", "Inverter_Availability_3" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d4ab7ce0-82b3-11ef-b45a-63918778ec19"
+      },
+      "name" : "fetch inverter wise avail",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 38,
+        "layoutY" : 492
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nnewMsg.Total_Inverter_Availability = (msg.Inverter_Availability_1 + msg.Inverter_Availability_2 + msg.Inverter_Availability_3)/3;\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fab07580-82b3-11ef-b45a-63918778ec19"
+      },
+      "name" : "avg inv avail",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 38,
+        "layoutY" : 545
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "Durtek_Device",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1908ea30-82b9-11ef-b45a-63918778ec19"
+      },
+      "name" : "to durtek device",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 35,
+        "layoutY" : 625
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d7e2cb60-82b9-11ef-b45a-63918778ec19"
+      },
+      "name" : "save total avail",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 33,
+        "layoutY" : 250
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"DURTEK_INV\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fbd10e70-9d93-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "durtek inv",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 256,
+        "layoutY" : 255
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"BR_INV\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9787e140-9d94-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "brilliant inv",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 258,
+        "layoutY" : 310
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "cal",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b39064c0-9d94-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "to cal",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 267,
+        "layoutY" : 371
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d12358d0-9d94-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save br",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 269,
+        "layoutY" : 430
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Inverter_Availability_1", "Inverter_Availability_2", "Inverter_Availability_3", "Inverter_Availability_4", "Inverter_Availability_5", "Inverter_Availability_6" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0575d130-9d95-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Avail INV wise",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 264,
+        "layoutY" : 558
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "cal",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47bea8a0-9d95-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "to cal",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 267,
+        "layoutY" : 629
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47becfb0-9d95-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 268,
+        "layoutY" : 489
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nnewMsg.Total_Inverter_Availability = (msg.Inverter_Availability_1 + msg.Inverter_Availability_2 + msg.Inverter_Availability_3+ msg.Inverter_Availability_4+ msg.Inverter_Availability_5+ msg.Inverter_Availability_6)/6;\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e26fb950-9d97-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "avg inv avail",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 468,
+        "layoutY" : 251
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"MAL_INV\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "afd563b0-a7c8-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Maldives Inverter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 467,
+        "layoutY" : 309
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "Mal_Device",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "17b7a0b0-a7c9-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "To Mal_Devices",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 472,
+        "layoutY" : 374
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a1112c50-a7d3-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save mal_devices",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 477,
+        "layoutY" : 433
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Inverter_Availability_1", "Inverter_Availability_2", "Inverter_Availability_3", "Inverter_Availability_4", "Inverter_Availability_5", "Inverter_Availability_6", "Inverter_Availability_7", "Inverter_Availability_8", "Inverter_Availability_9", "Inverter_Availability_10", "Inverter_Availability_11", "Inverter_Availability_12", "Inverter_Availability_13", "Inverter_Availability_14", "Inverter_Availability_15", "Inverter_Availability_16" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "cec093c0-a7d3-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Avail INV wise",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 480,
+        "layoutY" : 493
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nnewMsg.Total_Inverter_Availability = (msg.Inverter_Availability_1 + msg.Inverter_Availability_2 + msg.Inverter_Availability_3+ msg.Inverter_Availability_4+ msg.Inverter_Availability_5+ msg.Inverter_Availability_6+ msg.Inverter_Availability_7+ msg.Inverter_Availability_8+ msg.Inverter_Availability_9+ msg.Inverter_Availability_10+ msg.Inverter_Availability_11+ msg.Inverter_Availability_12+ msg.Inverter_Availability_13+ msg.Inverter_Availability_14+ msg.Inverter_Availability_15+ msg.Inverter_Availability_16)/16;\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0545caa0-a7d4-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "avg inv avail",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 482,
+        "layoutY" : 561
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "Mal_Device",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "38f9e020-a7d4-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "To Mal_Devices",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 487,
+        "layoutY" : 625
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4aa5cd20-a7d4-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

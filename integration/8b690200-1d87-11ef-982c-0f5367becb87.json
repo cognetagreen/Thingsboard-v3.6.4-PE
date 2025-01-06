@@ -1,0 +1,82 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : null,
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "metadata" : { },
+      "clientConfiguration" : {
+        "host" : "broker.emqx.io",
+        "port" : 1883,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
+        "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "topicFilters" : [ {
+        "filter" : "POC/ASC4/Data/Periodic",
+        "qos" : 0
+      } ],
+      "downlinkTopicPattern" : "${topic}"
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "0303ab50-1d86-11ef-982c-0f5367becb87"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "8b690200-1d87-11ef-982c-0f5367becb87"
+    },
+    "name" : "ASC4",
+    "remote" : false,
+    "routingKey" : "c7b87f94-61ac-3117-61df-62937d8b87aa",
+    "secret" : "nyrld2el7zthbvqfkbil",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "8b690200-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b02cd310-9c02-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "8b690200-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "668fbf60-1f0c-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_vmi1456118.contaboserver.net",
+      "lastUpdateTs" : 1734624398524,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

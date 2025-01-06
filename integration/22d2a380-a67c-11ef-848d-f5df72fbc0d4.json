@@ -1,0 +1,122 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "clientConfiguration" : {
+        "host" : "localhost",
+        "port" : 1884,
+        "cleanSession" : false,
+        "retainedMessage" : true,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
+        "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "xyz",
+          "password" : "abc"
+        }
+      },
+      "topicFilters" : [ {
+        "filter" : "POC/DG/Data/Periodic",
+        "qos" : 1
+      } ],
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "220c4640-a67c-11ef-848d-f5df72fbc0d4"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "22d2a380-a67c-11ef-848d-f5df72fbc0d4"
+    },
+    "name" : "Maldives660kW_DG_Integration",
+    "remote" : false,
+    "routingKey" : "8ddfbb68-588d-c0ca-55be-353c45645a82",
+    "secret" : "1vfse3dgvv3l3ed1csh7",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "22d2a380-a67c-11ef-848d-f5df72fbc0d4"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b19acdd0-a67d-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "22d2a380-a67c-11ef-848d-f5df72fbc0d4"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b1ae7ce0-a67d-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "22d2a380-a67c-11ef-848d-f5df72fbc0d4"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b1bf45c0-a67d-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "22d2a380-a67c-11ef-848d-f5df72fbc0d4"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "fc4492d0-a67d-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "22d2a380-a67c-11ef-848d-f5df72fbc0d4"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "33a9e8b0-a6fb-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_vmi1456118.contaboserver.net",
+      "lastUpdateTs" : 1734676620879,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

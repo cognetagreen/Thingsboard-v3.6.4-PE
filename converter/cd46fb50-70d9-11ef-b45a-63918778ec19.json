@@ -1,0 +1,29 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "scriptLang" : "TBEL",
+      "decoder" : null,
+      "tbelDecoder" : "// Decode an uplink message from a buffer\n// payload - array of bytes\n// metadata - key/value object\n\n/** Decoder **/\n\n// decode payload to string\nvar payloadStr = decodeToString(payload);\n\n// decode payload to JSON\n var data = decodeToJson(payload);\n\nvar deviceName = 'BESS1';\n// Result object with device/asset attributes/telemetry data\nvar result = [{\n// Use deviceName and deviceType or assetName and assetType, but not both.\n   deviceName: \"MAL680-BESS-1\",\n   telemetry: {\n       //rawData: payloadStr,\n       VOLT_L1_L2:data[0].data.ESS_Volts_L1_L2,\n       VOLT_L2_L3:data[0].data.ESS_Volts_L2_L3,\n       VOLT_L3_L1:data[0].data.ESS_Volts_L3_L1,\n       VOLT_L1_N:data[0].data.ESS_Volts_L1_N,\n       VOLT_L2_N:data[0].data.ESS_Volts_L2_N,\n       VOLT_L3_N:data[0].data.ESS_Volts_L3_N,\n       HZ_L1:data[0].data.ESS_Hz_L1/100,\n       HZ_L2:data[0].data.ESS_Hz_L2/100,\n       HZ_L3:data[0].data.ESS_Hz_L3/100,\n       POWER:data[0].data.ESS_kW,\n       REACTIVE_POWER:data[0].data.ESS_kVAR,\n       APPARENT_POWER:data[0].data.ESS_Apparent_power,\n       PF:data[0].data.ESS_PF/100,\n       ENERGY_DAILY:data[0].data.ESS_kWh_Daily,\n       ENERGY_Total:data[0].data.ESS_kWh_Total,\n\n    \n   }\n},\n{\n    deviceName: \"MAL680-PCS-1\",\n   telemetry: {\n       //rawData: payloadStr,\n       kWhcharged_Day:data[1].data.ESS_kWhcharged_Day/100,\n       kWhdischarged_Day:data[1].data.ESS_kWhdischarged_Day/100,\n       ESS_Charge_Cap:data[1].data.ESS_Charge_Cap/1000,\n       ESS_Disharge_Cap:data[1].data.ESS_Disharge_Cap/1000,\n       ESS_Rated_Cap:data[1].data.ESS_Rated_Cap/1000,\n       ESS_Maxcharge_kW:data[1].data.ESS_Maxcharge_kW/1000,\n       ESS_Maxdischarge_kW:data[1].data.ESS_Maxdischarge_kW/1000,\n       ESS_Charge_Rate:data[1].data.ESS_Charge_Rate/1000,\n       ESS_Discharge_Rate:data[1].data.ESS_Discharge_Rate/1000,\n       ESS_DC_Amps:data[1].data.ESS_DC_Amps,\n       ESS_SOC:data[1].data.ESS_SOC/10,\n       ESS_DOD : 100 - (data[1].data.ESS_SOC/10),\n       ESS_SOH:data[1].data.ESS_SOH/10,\n       AESS_SOE:data[1].data.ESS_SOE/10,\n       ESS_Rated_Ah:data[1].data.ESS_Rated_Ah/10,\n       ESS_kW_PCS:data[1].data.ESS_kW_PCS/1000,\n       ESS_PF_PCS:data[1].data.ESS_PF_PCS/1000,\n       ESS_PCSOperation:data[1].data.ESS_PCSOperation,\n       ESS_PCSShutdown:data[1].data.ESS_PCSShutdown,\n       ESS_kVAR_PCS:data[1].data.ESS_kVAR_PCS/1000,\n       ESS_EnergykWh_Total_PCS:data[1].data.ESS_EnergykWh_Total_PCS/100,\n       ESS_EnergykWh_Day_PCS:data[1].data.ESS_EnergykWh_Day_PCS/100,\n       ESS_Ph_A_Amps_Total_PCS:data[1].data.ESS_Ph_A_Amps_Total_PCS,\n       ESS_Ph_B_Amps_Total_PCS:data[1].data.ESS_Ph_B_Amps_Total_PCS,\n       ESS_Ph_C_Amps_Total_PCS:data[1].data.ESS_Ph_C_Amps_Total_PCS,\n       ESS_Ph_AB_Volt_Total_PCS:data[1].data.ESS_Ph_AB_Volt_Total_PCS/10,\n       ESS_Ph_BC_Volt_Total_PCS:data[1].data.ESS_Ph_BC_Volt_Total_PCS/10,\n       ESS_Ph_CA_Volt_Total_PCS:data[1].data.ESS_Ph_CA_Volt_Total_PCS/10,\n       HZ_L1:data[0].data.ESS_Hz_L1/100,\n       HZ_L2:data[0].data.ESS_Hz_L2/100,\n       HZ_L3:data[0].data.ESS_Hz_L3/100,\n       Line_AVG_HZ : (data[0].data.ESS_Hz_L1+data[0].data.ESS_Hz_L2+data[0].data.ESS_Hz_L3) / 300,\n       ESS_AVG_Line_Volt : (data[1].data.ESS_Ph_AB_Volt_Total_PCS + data[1].data.ESS_Ph_BC_Volt_Total_PCS + data[1].data.ESS_Ph_CA_Volt_Total_PCS) / 30,\n       ESS_AVG_Line_Amps : (data[1].data.ESS_Ph_A_Amps_Total_PCS + data[1].data.ESS_Ph_B_Amps_Total_PCS + data[1].data.ESS_Ph_C_Amps_Total_PCS) / 3,\n       AC_Active_Power_Watt:data[0].data.ESS_kW,\n       AC_Reactive_Power_var:data[0].data.ESS_kVAR,\n       AC_Apparant_Power_VA:data[0].data.ESS_Apparent_power,\n      \n   }\n    \n}, {\n    deviceName : \"Mal_Device\",\n    deviceType : 'inv_agg',\n    telemetry : {\n        PCS_Total_Power : data[0].data.ESS_kW,\n        PCS_Total_Discharge_kWh : data[1].data.ESS_kWhcharged_Day/1000,\n    }\n}\n];\n\n/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/\n\nreturn result;",
+      "encoder" : null,
+      "tbelEncoder" : null,
+      "updateOnlyKeys" : [ "manufacturer" ]
+    },
+    "debugMode" : true,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "cd46fb50-70d9-11ef-b45a-63918778ec19"
+    },
+    "name" : "Maldives680MQTT_DEIF_ASC_150STO_BESS1",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

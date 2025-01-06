@@ -1,0 +1,170 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "4d3df140-8f77-11ef-848d-f5df72fbc0d4"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "c7e68160-8f76-11ef-848d-f5df72fbc0d4"
+    },
+    "name" : "Durtek Solar Saving Report",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "True"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 350,
+        "layoutY" : 243
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "if(metadata.deviceName == \"Durtek_Device\") {\n    return true;\n} else {\n    return false;\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d3da320-8f77-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Durtek Device Filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 305,
+        "layoutY" : 152
+      },
+      "configuration" : {
+        "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "POST_TELEMETRY_REQUEST", "TO_SERVER_RPC_REQUEST" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d3df140-8f77-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "m1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 369,
+        "layoutY" : 332
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Grid_Daily_Energy_Import_kWh", "INV_Total_Power" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e0c594e0-8f77-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Fetching Grid_Daily_Energy_Import_kWh",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 387,
+        "layoutY" : 420
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "\n\nvar newMsg = {};\n\nnewMsg.Total_Generation = msg.Grid_Daily_Energy_Import_kWh + msg.INV_Total_Power;\nnewMsg.Solar_Saving = msg.INV_Total_Power * 5; // 5 is pricing of solar in local currency\nnewMsg.Grid_Export_Saving = msg.INV_Total_Power * 1.5;\nnewMsg.Total_Saving = newMsg.Solar_Saving + newMsg.Grid_Export_Saving;\n\n\n\nreturn {msg : newMsg};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e0c5e300-8f77-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Collecting",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 390,
+        "layoutY" : 510
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2cf74780-8f7a-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Saving Solar Saving Reports Fields",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

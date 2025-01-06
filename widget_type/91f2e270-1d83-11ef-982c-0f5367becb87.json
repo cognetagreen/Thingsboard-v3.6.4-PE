@@ -1,0 +1,48 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "report1",
+    "name" : "report1",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "timeseries",
+      "sizeX" : 8,
+      "sizeY" : 6,
+      "resources" : [ {
+        "url" : "https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"
+      }, {
+        "url" : "https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css"
+      }, {
+        "url" : "https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+      }, {
+        "url" : "https://unpkg.com/jquery/dist/jquery.min.js"
+      }, {
+        "url" : "https://unpkg.com/gridjs-jquery/dist/gridjs.production.min.js"
+      } ],
+      "templateHtml" : "<section id=\"report1\">\n    <div id=\"report-header\">\n        <div id=\"report-logo\">\n            <img src=\"https://t3.ftcdn.net/jpg/04/09/90/58/360_F_409905897_Egc9Q5nRaS4n0OinSdQE7WdT4tW3czOg.jpg\" alt=\"solar\" style=\"height:50px;width:50px\">\n        </div>\n        <div id=\"report-dot\"><b>Process Report</b></div>\n    </div>\n    <div id =\"report-info\">\n        <b>Client Name:-</b> <span> Aa-Bb-Cc</span><br>\n        <b>Manufactured By:-</b> <span> A-B-C</span><br>\n        <b>Print Interval:-</b> <span> x-y-z</span><br>\n        <b>Equipment Name:-</b> <span> p-q-r</span><br>\n    </div>\n    <div id=\"report-wrapper\"></div>\n</section>",
+      "templateCss" : "    #report1 {\n        margin: 0;\n        padding: 0;\n    }\n    #report-header {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        width: 100%;\n        border: 1px solid #999;\n    }\n    #report-dot {\n        color: #000;\n        padding-right: 10px;\n    }\n    #report-info {\n        width: 100%;\n        font-size: 14px;\n        font-weight: 500;\n        border: 1px solid #999;\n        border-top: none;\n        padding: 10px;\n        letter-spacing: 1px;\n    }\n    #report-info b {\n        padding: 5px;\n    }\n    #report-info span{\n        color: #888;\n        font-style: italic;\n    }\n    .table {\n        border: 1px solid #999;\n        border-collapse: collapse;\n    }\n    .tr {\n        border: 1px solid #999;\n    }\n    .th {\n        background-color: rgba(0, 0, 0, 0.1);\n        color: #000;\n        border-bottom: 1px solid #ccc;\n        text-align: center;\n    }\n    .td {\n        text-align: center;\n    }\n    #report-wrapper {\n        height: 90%;\n        margin: -3px 0 0 0;\n        /*padding: 0 0 10px 0;*/\n    }\n",
+      "controllerScript" : "self.onInit = function() {\n    var column = [\"TS\"];\n    var data = [];\n    for(var i=0; i < self.ctx.data.length ; i++){\n        data.push(self.ctx.data[i].data);\n        column.push(self.ctx.data[i].label);\n    }\n    \n    var grid = $(\"div#report-wrapper\").Grid({\n            pagination:true,\n            columns : column,\n            data : [],\n            className : {\n                table : \"table\",\n                tr : \"tr\",\n                th : \"th\",\n                td : \"td\"\n            }\n        });\n        \n    \n};\n\nself.onDataUpdated = function() {\n    var column = [\"TS\"];\n    var data = [];\n    for(var i=0; i < self.ctx.data.length ; i++){\n        column.push(self.ctx.data[i].dataKey.label);\n        if (i==0) {\n            data.push(self.ctx.data[i].data.map(elem => elem[0]));\n            data.push(self.ctx.data[i].data.map(elem => elem[1]));\n        }else{\n            data.push(self.ctx.data[i].data.map(elem => elem[1]));\n        }\n    }\n\n        var gridData = [];\n    if (data[0].length > 0) {\n        \n        for (var k = (data[0].length - 1); k >= 0; k--) {\n            var tempArray = [];\n            for (var j = 0; j < data.length; j++) {\n                tempArray.push(data[j][k]);\n            }\n            gridData.push(tempArray);\n        }\n    }\n    \n    // Prepare the updated data for the grid\n    $(\"div#report-wrapper\").empty();\n    var grid = $(\"div#report-wrapper\").Grid({\n        pagination: true,\n        columns : column,\n        data : gridData,\n        className : {\n            table : \"table\",\n            tr : \"tr\",\n            th : \"th\",\n            td : \"td\"\n        },\n    });\n    grid.forceRender();\n\n};\n",
+      "settingsSchema" : "{}",
+      "dataKeySettingsSchema" : "{}",
+      "latestDataKeySettingsSchema" : "{}",
+      "settingsDirective" : "tb-flot-line-widget-settings",
+      "dataKeySettingsDirective" : "tb-flot-line-key-settings",
+      "latestDataKeySettingsDirective" : "tb-flot-latest-key-settings",
+      "hasBasicMode" : true,
+      "basicModeDirective" : "tb-flot-basic-config",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"function\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"First\",\"color\":\"#2196f3\",\"settings\":{\"showLines\":true,\"fillLines\":true,\"showPoints\":false},\"_hash\":0.8587686344902596,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"},{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Second\",\"color\":\"#ffc107\",\"settings\":{\"showLines\":true,\"fillLines\":false,\"showPoints\":false},\"_hash\":0.12775350966079668,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"},{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Third\",\"color\":\"#f44336\",\"settings\":{},\"_hash\":0.7790117025744843,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\",\"decimals\":0,\"aggregationType\":null,\"usePostProcessing\":null,\"postFuncBody\":null}]}],\"timewindow\":{\"hideInterval\":false,\"hideLastInterval\":false,\"hideQuickInterval\":false,\"hideAggregation\":false,\"hideAggInterval\":false,\"hideTimezone\":false,\"selectedTab\":0,\"realtime\":{\"realtimeType\":0,\"timewindowMs\":60000,\"quickInterval\":\"CURRENT_DAY\",\"interval\":1000},\"aggregation\":{\"type\":\"AVG\",\"limit\":25000},\"timezone\":null},\"showTitle\":false,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"0px\",\"settings\":{\"stack\":false,\"fontSize\":10,\"fontColor\":\"#545454\",\"showTooltip\":true,\"tooltipIndividual\":false,\"tooltipCumulative\":false,\"hideZeros\":false,\"grid\":{\"verticalLines\":true,\"horizontalLines\":true,\"outlineWidth\":1,\"color\":\"#545454\",\"backgroundColor\":null,\"tickColor\":\"#DDDDDD\"},\"xaxis\":{\"title\":null,\"showLabels\":true,\"color\":\"#545454\"},\"yaxis\":{\"min\":null,\"max\":null,\"title\":null,\"showLabels\":true,\"color\":\"#545454\",\"tickSize\":null,\"tickDecimals\":0,\"ticksFormatter\":\"\"},\"shadowSize\":4,\"smoothLines\":false,\"comparisonEnabled\":false,\"xaxisSecond\":{\"axisPosition\":\"top\",\"title\":null,\"showLabels\":true},\"showLegend\":true,\"legendConfig\":{\"direction\":\"column\",\"position\":\"bottom\",\"sortDataKeys\":false,\"showMin\":false,\"showMax\":false,\"showAvg\":true,\"showTotal\":false,\"showLatest\":false},\"customLegendEnabled\":false},\"title\":\"report1\",\"dropShadow\":true,\"enableFullscreen\":true,\"titleStyle\":{\"fontSize\":\"16px\",\"fontWeight\":400},\"mobileHeight\":null,\"configMode\":\"advanced\",\"actions\":{},\"showTitleIcon\":false,\"titleIcon\":\"thermostat\",\"iconColor\":\"#1F6BDD\",\"useDashboardTimewindow\":false,\"displayTimewindow\":true,\"titleFont\":null,\"titleColor\":null,\"enableDataExport\":false,\"widgetStyle\":{},\"widgetCss\":\"\",\"pageSize\":1024,\"noDataDisplayMessage\":\"\"}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "91f2e270-1d83-11ef-982c-0f5367becb87"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

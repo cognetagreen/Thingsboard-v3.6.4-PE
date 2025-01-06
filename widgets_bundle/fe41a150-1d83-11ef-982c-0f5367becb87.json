@@ -1,0 +1,21 @@
+{
+  "entityType" : "WIDGETS_BUNDLE",
+  "entity" : {
+    "alias" : "bdbargraph",
+    "description" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGETS_BUNDLE",
+      "id" : "fe41a150-1d83-11ef-982c-0f5367becb87"
+    },
+    "image" : null,
+    "name" : "bdBarGraph",
+    "order" : null,
+    "title" : "bdBarGraph"
+  },
+  "fqns" : [ "barchart1", "barchart22" ],
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

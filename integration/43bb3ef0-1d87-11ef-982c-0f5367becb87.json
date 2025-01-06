@@ -1,0 +1,142 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : null,
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "metadata" : { },
+      "clientConfiguration" : {
+        "host" : "broker.emqx.io",
+        "port" : 1883,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
+        "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "topicFilters" : [ {
+        "filter" : "POC/AGC/Data/Periodic",
+        "qos" : 0
+      } ],
+      "downlinkTopicPattern" : "${topic}"
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "f2bdb6f0-1d85-11ef-982c-0f5367becb87"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "name" : "AGC",
+    "remote" : false,
+    "routingKey" : "2d22c250-71ec-a0dd-239e-f4a606126364",
+    "secret" : "iq061dkn8f03lrgiqf29",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "89908210-54a9-11ef-8b69-e59cb59c4833"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "af9f3910-9c02-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "f2088280-1f0b-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "15a813e0-1f0c-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "498ef1f0-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "49c173a0-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5834b140-54a5-11ef-8b69-e59cb59c4833"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_vmi1456118.contaboserver.net",
+      "lastUpdateTs" : 1734624398519,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

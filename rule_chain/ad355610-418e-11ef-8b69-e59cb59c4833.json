@@ -1,0 +1,160 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "8684beb0-418f-11ef-8b69-e59cb59c4833"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "ad355610-418e-11ef-8b69-e59cb59c4833"
+    },
+    "name" : "Last Value Telemetry",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 239,
+        "layoutY" : 251
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "if(metadata.deviceName == \"cal\") {\n    return true;\n}\nelse {\n    return false;\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8684beb0-418f-11ef-8b69-e59cb59c4833"
+      },
+      "name" : "cal",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 238,
+        "layoutY" : 341
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_LastDayValue_param_array(ARRAY['254','282','392'] );",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "31cf9e30-4194-11ef-8b69-e59cb59c4833"
+      },
+      "name" : "server",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 242,
+        "layoutY" : 426
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nmsg.rows.forEach(function(elem){\n    if(elem.key_1 == 254) {\n        \n        newMsg.INV_DailyEnergy_Total_cal_PrevDay = elem.value_v_1;\n    }\n    else if(elem.key_1 == 392) {\n        newMsg.Node_Generation_Loss_BP_PrevDay = elem.value_v_1;\n    }\n    else if(elem.key_1 == 282) {\n        newMsg.AGC_Import_Day_PrevDay = elem.value_v_1;\n    }\n})\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "31cfc540-4194-11ef-8b69-e59cb59c4833"
+      },
+      "name" : "Node_SL_PV_DailyEnergy",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 242,
+        "layoutY" : 511
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a16e07d0-4195-11ef-8b69-e59cb59c4833"
+      },
+      "name" : "Last BP PV $ Generation loss",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

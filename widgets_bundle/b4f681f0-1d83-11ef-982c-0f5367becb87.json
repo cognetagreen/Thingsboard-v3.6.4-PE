@@ -1,0 +1,21 @@
+{
+  "entityType" : "WIDGETS_BUNDLE",
+  "entity" : {
+    "alias" : "bdlinechart",
+    "description" : "Line Chart Creates here",
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGETS_BUNDLE",
+      "id" : "b4f681f0-1d83-11ef-982c-0f5367becb87"
+    },
+    "image" : null,
+    "name" : "bdLineChart",
+    "order" : null,
+    "title" : "bdLineChart"
+  },
+  "fqns" : [ "h1_new", "cac1", "cac2", "areachart1", "h1_new_ui", "dual_cell_chaerts", "dual_cell_chart_2" ],
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

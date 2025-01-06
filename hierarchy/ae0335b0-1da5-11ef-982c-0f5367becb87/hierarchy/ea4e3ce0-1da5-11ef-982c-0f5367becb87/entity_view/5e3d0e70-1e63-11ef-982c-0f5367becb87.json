@@ -1,0 +1,41 @@
+{
+  "entityType" : "ENTITY_VIEW",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    },
+    "endTimeMs" : 0,
+    "entityId" : {
+      "entityType" : "DEVICE",
+      "id" : "668fbf60-1f0c-11ef-982c-0f5367becb87"
+    },
+    "externalId" : null,
+    "keys" : {
+      "attributes" : {
+        "cs" : null,
+        "sh" : null,
+        "ss" : null
+      },
+      "timeseries" : [ "ASC4_VOLT_L1_L2", "ASC4_VOLT_L2_L3", "ASC4_VOLT_L3_L1", "ASC4_VOLT_L1_N", "ASC4_VOLT_L2_N", "ASC4_VOLT_L3_N", "ASC4_HZ_L3", "ASC4_HZ_L1", "ASC4_HZ_L2", "ASC4_VOLT_ANG_L1_L2", "ASC4_VOLT_ANG_L2_L3", "ASC4_VOLT_ANG_L3_L1", "ASC4_AMP_L1", "ASC4_AMP_L2", "ASC4_AMP_L3", "ASC4_POWER", "ASC4_APPARENT_POWER", "ASC4_PF", "ASC4_ENERGY_Total" ]
+    },
+    "name" : "ASC",
+    "startTimeMs" : 0,
+    "type" : "ASSETS",
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "id" : {
+      "entityType" : "ENTITY_VIEW",
+      "id" : "5e3d0e70-1e63-11ef-982c-0f5367becb87"
+    },
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

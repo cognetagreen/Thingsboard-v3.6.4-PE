@@ -1,0 +1,21 @@
+{
+  "entityType" : "WIDGETS_BUNDLE",
+  "entity" : {
+    "alias" : "bdmaindashboard",
+    "description" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGETS_BUNDLE",
+      "id" : "a487a8d0-1d83-11ef-982c-0f5367becb87"
+    },
+    "image" : null,
+    "name" : "bdMainDashboard",
+    "order" : null,
+    "title" : "bdMainDashboard"
+  },
+  "fqns" : [ "pv_power", "specific_yield" ],
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

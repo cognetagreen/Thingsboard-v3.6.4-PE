@@ -1,0 +1,41 @@
+{
+  "entityType" : "ENTITY_VIEW",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    },
+    "endTimeMs" : 0,
+    "entityId" : {
+      "entityType" : "DEVICE",
+      "id" : "b92e7ef0-1d86-11ef-982c-0f5367becb87"
+    },
+    "externalId" : null,
+    "keys" : {
+      "attributes" : {
+        "cs" : null,
+        "sh" : null,
+        "ss" : null
+      },
+      "timeseries" : null
+    },
+    "name" : "DL_Durtek_Device",
+    "startTimeMs" : 0,
+    "type" : "ASSETS",
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "id" : {
+      "entityType" : "ENTITY_VIEW",
+      "id" : "3597b590-1dac-11ef-982c-0f5367becb87"
+    },
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

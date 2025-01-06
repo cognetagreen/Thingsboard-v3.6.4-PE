@@ -1,0 +1,105 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "c1dda4d0-1d8c-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "c1985e70-1d8c-11ef-982c-0f5367becb87"
+    },
+    "name" : "avg_Gen_Power",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 683,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c1dd0890-1d8c-11ef-982c-0f5367becb87"
+      },
+      "name" : "rr",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 319,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "inputValueKey" : "Generator_Power",
+        "outputValueKey" : "avg_Gen_Power",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "DAY",
+        "timeZoneId" : "Asia/Calcutta",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 10,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "ON_EACH_CHANGE",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : true,
+        "periodValue" : 10,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "single",
+          "entityId" : {
+            "entityType" : "DEVICE",
+            "id" : "65c6bde0-f108-11ee-ad9b-d5803676b938"
+          }
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c1dda4d0-1d8c-11ef-982c-0f5367becb87"
+      },
+      "name" : "xz",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

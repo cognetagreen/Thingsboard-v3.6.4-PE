@@ -4,11 +4,11 @@
     "additionalInfo" : {
       "gateway" : false,
       "overwriteActivityTime" : false,
-      "description" : ""
+      "description" : "{\n\"Plant_Name\" : \"PV.Brilliant Printers\",\n\"Country\":\"India\",\n\"Plant_AC_Capacity\" : 720,\n\"Plant_DC_Capacity\" : 720\n}"
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+      "id" : "f57b0d30-9c00-11ef-848d-f5df72fbc0d4"
     },
     "deviceData" : {
       "configuration" : {
@@ -20,50 +20,74 @@
     },
     "deviceProfileId" : {
       "entityType" : "DEVICE_PROFILE",
-      "id" : "90f5e7e0-a7c7-11ef-848d-f5df72fbc0d4"
+      "id" : "b939c990-1d86-11ef-982c-0f5367becb87"
     },
     "externalId" : null,
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "b93a65d0-1d86-11ef-982c-0f5367becb87"
     },
-    "label" : "Inverter-16",
-    "name" : "Mal660-INV-16",
+    "label" : "Calculation",
+    "name" : "cal",
     "ownerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+      "id" : "f57b0d30-9c00-11ef-848d-f5df72fbc0d4"
     },
     "softwareId" : null,
-    "type" : "MAL_INV"
+    "type" : "inv_agg"
   },
   "credentials" : {
-    "credentialsId" : "ubybmhS9EL7BHhVvpasV",
+    "credentialsId" : "g4YhQ56KAgvv4onc1JKo",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
   "relations" : [ {
-    "additionalInfo" : [ {
-      "label" : "Inverter-16"
-    } ],
+    "additionalInfo" : null,
     "from" : {
-      "entityType" : "ASSET",
-      "id" : "5bc11b90-a663-11ef-848d-f5df72fbc0d4"
+      "entityType" : "INTEGRATION",
+      "id" : "84f9c7c0-1d86-11ef-982c-0f5367becb87"
     },
     "to" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "b93a65d0-1d86-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b93a65d0-1d86-11ef-982c-0f5367becb87"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : [ {
+      "label" : "calculation"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "ee672720-9c02-11ef-848d-f5df72fbc0d4"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b93a65d0-1d86-11ef-982c-0f5367becb87"
     },
     "type" : "Contains",
     "typeGroup" : "COMMON"
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ {
-      "booleanValue" : true,
+      "booleanValue" : false,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1734624767995,
+      "lastUpdateTs" : 1732103857118,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -71,16 +95,16 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1734606445273,
-      "longValue" : 1734606445271,
+      "lastUpdateTs" : 1732103857118,
+      "longValue" : 1732103857116,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1736159084720,
-      "longValue" : 1736159083093,
+      "lastUpdateTs" : 1732103225450,
+      "longValue" : 1732103223050,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ ]

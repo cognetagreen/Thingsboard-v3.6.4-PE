@@ -1,0 +1,84 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "e12a2530-1d8b-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "e0fcac90-1d8b-11ef-982c-0f5367becb87"
+    },
+    "name" : "Transformation",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 351,
+        "layoutY" : 146
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var status={};\r\nif(msg.INV1_Generating_Mode!=true){\r\nstatus.INV1_Generating_Mode_f=0;\r\n}\r\nelse {\r\nstatus.INV1_Generating_Mode_f=1;\r\n}\r\nif (msg.INV2_Generating_Mode!=true){\r\nstatus.INV2_Generating_Mode_f=0;\r\n}\r\nelse {\r\nstatus.INV2_Generating_Mode_f=1;\r\n}\r\n\r\nif (msg.INV3_Generating_Mode!=true){\r\nstatus.INV3_Generating_Mode_f=0;\r\n}\r\nelse {\r\nstatus.INV3_Generating_Mode_f=1;\r\n}\r\n\r\nif (msg.INV4_Generating_Mode!=true){\r\nstatus.INV4_Generating_Mode_f=0;\r\n}\r\nelse {\r\nstatus.INV4_Generating_Mode_f=1;\r\n}\r\n\r\nif (msg.INV5_Generating_Mode!=true){\r\nstatus.INV5_Generating_Mode_f=0;\r\n}\r\nelse {\r\nstatus.INV5_Generating_Mode_f=1;\r\n}\r\n\r\nif (msg.INV6_Generating_Mode!=true){\r\nstatus.INV6_Generating_Mode_f=0;\r\n}\r\nelse {\r\nstatus.INV6_Generating_Mode_f=1;\r\n}\r\n\r\nvar trip={};\r\nif(msg.INV1_Trip_Mode!=true){\r\ntrip.INV1_Trip_Mode_f=0;\r\n}\r\nelse {\r\ntrip.INV1_Trip_Mode_f=1;\r\n}\r\nif(msg.INV2_Trip_Mode!=true){\r\ntrip.INV2_Trip_Mode_f=0;\r\n}\r\nelse {\r\ntrip.INV2_Trip_Mode_f=1;\r\n}\r\nif(msg.INV3_Trip_Mode!=true){\r\ntrip.INV3_Trip_Mode_f=0;\r\n}\r\nelse {\r\ntrip.INV3_Trip_Mode_f=1;\r\n}\r\nif(msg.INV4_Trip_Mode!=true){\r\ntrip.INV4_Trip_Mode_f=0;\r\n}\r\nelse {\r\ntrip.INV4_Trip_Mode_f=1;\r\n}\r\nif(msg.INV5_Trip_Mode!=true){\r\ntrip.INV5_Trip_Mode_f=0;\r\n}\r\nelse {\r\ntrip.INV5_Trip_Mode_f=1;\r\n}\r\nif(msg.INV6_Trip_Mode!=true){\r\ntrip.INV6_Trip_Mode_f=0;\r\n}\r\nelse {\r\ntrip.INV6_Trip_Mode_f=1;\r\n}\r\n\r\nvar comm={};\r\nif(msg.INV1_Non_Comm!=true){\r\ncomm.INV1_Non_Comm_f=0;\r\n}\r\nelse {\r\ncomm.INV1_Non_Comm_f=1;\r\n}\r\nif(msg.INV2_Non_Comm!=true){\r\ncomm.INV2_Non_Comm_f=0;\r\n}\r\nelse {\r\ncomm.INV2_Non_Comm_f=1;\r\n}\r\nif(msg.INV3_Non_Comm!=true){\r\ncomm.INV3_Non_Comm_f=0;\r\n}\r\nelse {\r\ncomm.INV3_Non_Comm_f=1;\r\n}\r\nif(msg.INV4_Non_Comm!=true){\r\ncomm.INV4_Non_Comm_f=0;\r\n}\r\nelse {\r\ncomm.INV4_Non_Comm_f=1;\r\n}\r\nif(msg.INV5_Non_Comm!=true){\r\ncomm.INV5_Non_Comm_f=0;\r\n}\r\nelse {\r\ncomm.INV5_Non_Comm_f=1;\r\n}\r\nif(msg.INV6_Non_Comm!=true){\r\ncomm.INV6_Non_Comm_f=0;\r\n}\r\nelse {\r\ncomm.INV6_Non_Comm_f=1;\r\n}\r\n\r\n//var saving={};\r\n//saving.saving_cal=msg.INV_DailyEnergy_Total-msg.Generator_Daily_energy;\r\n\r\nvar sum={Generating_Mode_INV:(((status.INV1_Generating_Mode_f+status.INV2_Generating_Mode_f+status.INV3_Generating_Mode_f+status.INV4_Generating_Mode_f+status.INV5_Generating_Mode_f+status.INV6_Generating_Mode_f)/6)*100),Trip_Mode_Inv:(((trip.INV1_Trip_Mode_f+trip.INV2_Trip_Mode_f+trip.INV3_Trip_Mode_f+trip.INV4_Trip_Mode_f+trip.INV5_Trip_Mode_f+trip.INV6_Trip_Mode_f)/6)*100),Non_Communicating_Inv:(((comm.INV1_Non_Comm_f+comm.INV2_Non_Comm_f+comm.INV3_Non_Comm_f+comm.INV4_Non_Comm_f+comm.INV5_Non_Comm_f+comm.INV6_Non_Comm_f)/6)*100)};\r\n\r\n\r\n\r\nreturn {msg:sum, metadata: metadata, msgType: msgType};\r\n\r\n\r\n\r\n\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e12a2530-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "math",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 691,
+        "layoutY" : 143
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e12a7350-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "math",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "entityType" : "ENTITY_VIEW",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "endTimeMs" : 0,
+    "entityId" : {
+      "entityType" : "DEVICE",
+      "id" : "15a813e0-1f0c-11ef-982c-0f5367becb87"
+    },
+    "externalId" : null,
+    "keys" : {
+      "attributes" : {
+        "cs" : null,
+        "sh" : null,
+        "ss" : null
+      },
+      "timeseries" : [ "AGC_VOLT_L1_L2", "AGC_VOLT_L2_L3", "AGC_VOLT_L3_L1", "AGC_HZ_L1", "AGC_HZ_L2", "AGC_HZ_L3", "AGC_AMP_L1", "AGC_AMP_L2", "AGC_AMP_L3", "AGC_POWER_L1", "AGC_POWER_L2", "AGC_POWER_L3", "AGC_POWER", "AGC_REACTIVE_POWER_L1", "AGC_REACTIVE_POWER_L2", "AGC_REACTIVE_POWER_L3", "AGC_REACTIVE_POWER", "AGC_EXPORT_DAY", "AGC_EXPORT_TOTAL", "AGC_ENGINE_SPEED", "AGC_FULE_RATE", "AGC_Run_Time", "grid_status", "Generating_Mode_INV", "Trip_Mode_Inv", "Non_Communicating_Inv" ]
+    },
+    "name" : "AGC_3",
+    "startTimeMs" : 0,
+    "type" : "ASSETS",
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "id" : {
+      "entityType" : "ENTITY_VIEW",
+      "id" : "31081c30-1f29-11ef-982c-0f5367becb87"
+    },
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

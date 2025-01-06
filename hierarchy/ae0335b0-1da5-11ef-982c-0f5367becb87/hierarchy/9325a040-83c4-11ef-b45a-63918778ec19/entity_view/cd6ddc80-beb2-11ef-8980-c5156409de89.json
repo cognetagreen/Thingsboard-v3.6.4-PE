@@ -1,0 +1,49 @@
+{
+  "entityType" : "ENTITY_VIEW",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+    },
+    "endTimeMs" : 0,
+    "entityId" : {
+      "entityType" : "DEVICE",
+      "id" : "580cacc0-a72c-11ef-848d-f5df72fbc0d4"
+    },
+    "externalId" : null,
+    "keys" : {
+      "attributes" : {
+        "cs" : [ "active" ],
+        "sh" : [ "active" ],
+        "ss" : [ "active" ]
+      },
+      "timeseries" : [ "AC_Reactive_Power", "AC_Active_Power_Watt", "Energy_Total_kWh" ]
+    },
+    "name" : "Inverter-2",
+    "startTimeMs" : 0,
+    "type" : "ASSETS",
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "id" : {
+      "entityType" : "ENTITY_VIEW",
+      "id" : "cd6ddc80-beb2-11ef-8980-c5156409de89"
+    },
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1734624768029,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

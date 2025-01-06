@@ -1,0 +1,490 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "0b8546c0-9136-11ef-848d-f5df72fbc0d4"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "fd402b70-9135-11ef-848d-f5df72fbc0d4"
+    },
+    "name" : "Technical & Energy Availability",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 6,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 12,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 8,
+      "type" : "True"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 319,
+        "layoutY" : 95
+      },
+      "configuration" : {
+        "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "POST_TELEMETRY_REQUEST", "TO_SERVER_RPC_REQUEST" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0b8546c0-9136-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "m1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 329,
+        "layoutY" : 207
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Total_Inverter_Availability" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "28a5a2e0-9136-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Total_Inverter_Availability",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 328,
+        "layoutY" : 300
+      },
+      "configuration" : {
+        "inputValueKey" : "Total_Inverter_Availability",
+        "outputValueKey" : "AVG_Hourly__Inverter_Availability",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Asia/Calcutta",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 5,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "ON_EACH_CHANGE",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : true,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "single",
+          "entityId" : {
+            "entityType" : "DEVICE",
+            "id" : "b92e7ef0-1d86-11ef-982c-0f5367becb87"
+          }
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "54307ca0-9136-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Technicla_Inverter_Availability",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 330,
+        "layoutY" : 358
+      },
+      "configuration" : {
+        "inputValueKey" : "Total_Inverter_Availability",
+        "outputValueKey" : "AVG_Daily_Inverter_Availability",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "DAY",
+        "timeZoneId" : "Asia/Calcutta",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 4,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "ON_EACH_CHANGE",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : true,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "single",
+          "entityId" : {
+            "entityType" : "DEVICE",
+            "id" : "b92e7ef0-1d86-11ef-982c-0f5367becb87"
+          }
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c59d8130-9136-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Total_Inverter_Availability Days",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 331,
+        "layoutY" : 416
+      },
+      "configuration" : {
+        "inputValueKey" : "Total_Inverter_Availability",
+        "outputValueKey" : "AVG_Month_Inverter_Availability",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "MONTH",
+        "timeZoneId" : "Asia/Calcutta",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 4,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "ON_EACH_CHANGE",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : true,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "single",
+          "entityId" : {
+            "entityType" : "DEVICE",
+            "id" : "b92e7ef0-1d86-11ef-982c-0f5367becb87"
+          }
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "05c72220-9137-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Total_Inverter_Availability Month",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 613,
+        "layoutY" : 297
+      },
+      "configuration" : {
+        "inputValueKey" : "PV_Total_Energy_kWh",
+        "outputValueKey" : "Daily_Delta_PV_Total_Energy_MWh",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : 2,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "626f4470-9138-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "PV Energy Delta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 600,
+        "layoutY" : 204
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "PV_Total_Energy_kWh" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "626fe0b0-9138-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "PV_Total_Energy_kWh",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 596,
+        "layoutY" : 494
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "22cb58d0-9139-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 49,
+        "layoutY" : 280
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Grid_Daily_Energy_Export_kWh", "Grid_Availability_Month", "Expected_kWh_2024_11" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a65d0700-9843-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Grid ENergy Testing avail",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 52,
+        "layoutY" : 334
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\nvar hour = 23;\nvar startMin = 55;\nvar endMin = 59;\n\nvar time = new Date();\nvar currentYear = time.getFullYear();\nvar currentMonth = time.getMonth();\nvar currentDate = time.getDate();\nvar currentHour = time.getHours();\nvar currentMinute = time.getMinutes();\n\nif(msg.INV_Total_Power >= 0) { // this condition is for avoid multiple calculation of Grid Availability\n    if(currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n        newMsg.Grid_Availability_Month = msg.Grid_Availability_Month + msg.Grid_Daily_Energy_Export_kWh;\n        agg();\n    }\n}\n\nfunction agg() {\n    switch (currentMonth) {\n        case 0:\n            if(currentDate == 31 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(1);\n            }\n            break;\n        case 1:\n            var isLeap = new Date(currentYear, 1, 29).getDate() === 29;\n            if(isLeap) {\n                if(currentDate == 29 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                    lastMonthEnergyAvailability(2);\n                }\n            } else {\n                if(currentDate == 28 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                    lastMonthEnergyAvailability(2);\n                }\n            }\n            break;\n        case 2:\n            if(currentDate == 31 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(3);\n            }\n            break;\n        case 3:\n            if(currentDate == 30 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(4);\n            }\n            break;\n        case 4:\n            if(currentDate == 31 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(5);\n            }\n            break;\n        case 5:\n            if(currentDate == 30 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(6);\n            }\n            break;\n        case 6:\n            if(currentDate == 31 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(7);\n            }\n            break;\n        case 7:\n            if(currentDate == 31 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(8);\n            }\n            break;\n        case 8:\n            if(currentDate == 30 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(9);\n            }\n            break;\n        case 9:\n            if(currentDate == 31 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(10);\n            }\n            break;\n        case 10:\n            if(currentDate == 30 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(11);\n            }\n            break;\n        case 11:\n            if(currentDate == 31 && currentHour == hour && (currentMinute >= startMin && currentMinute <= endMin)) {\n                lastMonthEnergyAvailability(12);\n            }\n            break;\n        default:\n            // code\n    }\n}\n\n\nfunction lastMonthEnergyAvailability(month) {\n    newMsg.Grid_Availability_Month_T = (newMsg.Grid_Availability_Month / msg[\"Expected_kWh_\" + currentYear + \"_\" + month]) * 100;\n}\n\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "caa517f0-9844-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "store energy per month",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 49,
+        "layoutY" : 388
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "Durtek_Device",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "009a43d0-9845-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save to durtek device",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 54,
+        "layoutY" : 443
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "009ae010-9845-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save Grid_Availability_Month",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 45,
+        "layoutY" : 225
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"inv_agg\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "556fc150-98b3-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "inv -agg",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

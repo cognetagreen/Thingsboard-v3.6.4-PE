@@ -1,0 +1,166 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : null,
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "metadata" : { },
+      "clientConfiguration" : {
+        "host" : "broker.emqx.io",
+        "port" : 1883,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
+        "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "topicFilters" : [ {
+        "filter" : "POC/INV/Data/Periodic",
+        "qos" : 1
+      } ],
+      "downlinkTopicPattern" : "${topic}"
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "e4b333a0-1d85-11ef-982c-0f5367becb87"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "name" : "Inverters",
+    "remote" : false,
+    "routingKey" : "0a6d7c39-b97b-bf6e-3115-365b80bb839a",
+    "secret" : "rj5srnj7u4bil2ul6e6i",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "05c98ca0-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "05e0be20-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "05e997c0-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "05f15ff0-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "05fbe740-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "060a1810-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "062b0d90-1d87-11ef-982c-0f5367becb87"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "75b0b000-54a7-11ef-8b69-e59cb59c4833"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "f3815fa0-1d86-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "75b543e0-54a7-11ef-8b69-e59cb59c4833"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_vmi1456118.contaboserver.net",
+      "lastUpdateTs" : 1734624398514,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

@@ -1,0 +1,639 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "20ad8050-95b7-11ef-848d-f5df72fbc0d4"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "ed668480-95b6-11ef-848d-f5df72fbc0d4"
+    },
+    "name" : "Durtek Generation Loss",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 5,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 9,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "True"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 10,
+      "type" : "True"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 18,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 329,
+        "layoutY" : 90
+      },
+      "configuration" : {
+        "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "POST_TELEMETRY_REQUEST", "TO_SERVER_RPC_REQUEST" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "20ad8050-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "M1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 0,
+        "layoutY" : 238
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == \"DL300-Inverter-1\") {\n    return true;\n}\nelse {\nreturn false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "564019d0-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Durtek Inverter 1 Filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 0,
+        "layoutY" : 299
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_Genenration_Loss_DeviceID('11512a50-5edd-11ef-b103-1f32ed31c997','Active_Power_reference', 'AC_Active_Power_Watt', 100, 12);",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "564067f0-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "server",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 0,
+        "layoutY" : 362
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "\nvar inv = {};\nif(msg.rows.length>0) {\n    inv.Node_Generation_Loss_BP = 0;\n    msg.rows.forEach(function(elem){\n        inv.Node_Generation_Loss_BP += elem.generation_loss_v;\n    });\n    \n    inv.Node_Generation_Loss_BP = inv.Node_Generation_Loss_BP.toFixed(2);\n}\n\nreturn {msg: inv, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5640b610-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Inverters Generation Loss",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3,
+        "layoutY" : 417
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5640dd20-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "inv",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 198,
+        "layoutY" : 227
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == \"DL300-Inverter-2\") {\n    return true;\n}\nelse {\nreturn false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8640c440-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Durtek Inverter 2 Filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 209,
+        "layoutY" : 295
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_Genenration_Loss_DeviceID('145590b0-5edd-11ef-b103-1f32ed31c997','Active_Power_reference', 'AC_Active_Power_Watt', 100, 12);",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "86411260-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "server",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 216,
+        "layoutY" : 367
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "\nvar inv = {};\nif(msg.rows.length>0) {\n    inv.Node_Generation_Loss_BP = 0;\n    msg.rows.forEach(function(elem){\n        inv.Node_Generation_Loss_BP += elem.generation_loss_v;\n    });\n    \n    inv.Node_Generation_Loss_BP = inv.Node_Generation_Loss_BP.toFixed(2);\n}\n\nreturn {msg: inv, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "86411261-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Inverters Generation Loss",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 221,
+        "layoutY" : 433
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "86418790-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "inv",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 413,
+        "layoutY" : 227
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == \"DL300-Inverter-3\") {\n    return true;\n}\nelse {\nreturn false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "86418791-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Durtek Inverter 3 Filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 426,
+        "layoutY" : 294
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_Genenration_Loss_DeviceID('1449a9d0-5edd-11ef-b103-1f32ed31c997','Active_Power_reference', 'AC_Active_Power_Watt', 100, 12);",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8641aea0-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "server",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 430,
+        "layoutY" : 367
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "\nvar inv = {};\nif(msg.rows.length>0) {\n    inv.Node_Generation_Loss_BP = 0;\n    msg.rows.forEach(function(elem){\n        inv.Node_Generation_Loss_BP += elem.generation_loss_v;\n    });\n    \n    inv.Node_Generation_Loss_BP = inv.Node_Generation_Loss_BP.toFixed(2);\n}\n\nreturn {msg: inv, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8641d5b0-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Inverters Generation Loss",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 435,
+        "layoutY" : 429
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8641fcc0-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "inv",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 227,
+        "layoutY" : 501
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\nvar addString = metadata.deviceName.split(\"-\");\n\nnewMsg[\"Node_Generation_Loss_BP\" + \"_\" + addString[addString.length -1 ]] = msg.Node_Generation_Loss_BP;\n\nreturn {msg : newMsg}",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "41c16b60-9e97-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "name change",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 227,
+        "layoutY" : 564
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "Durtek_Device",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "74db63c0-9e97-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "change to calculation plant",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 227,
+        "layoutY" : 625
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "84097f80-9e97-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "s2",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 226,
+        "layoutY" : 683
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Node_Generation_Loss_BP_1", "Node_Generation_Loss_BP_2", "Node_Generation_Loss_BP_3" ],
+        "serverAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "00d87ca0-9e98-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "fetching Generation Loss values",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 223,
+        "layoutY" : 743
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nnewMsg.Generation_Loss = (msg.Node_Generation_Loss_BP_1? msg.Node_Generation_Loss_BP_1 : 0) + (msg.Node_Generation_Loss_BP_2? msg.Node_Generation_Loss_BP_2 : 0) + (msg.Node_Generation_Loss_BP_3? msg.Node_Generation_Loss_BP_3 : 0);\n\nreturn {msg: newMsg};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "00da5160-9e98-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "aggregate all LOSSES",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 227,
+        "layoutY" : 800
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "00da9f80-9e98-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "s3",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

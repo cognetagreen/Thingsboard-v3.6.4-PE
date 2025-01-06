@@ -1,0 +1,38 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "dg_formula",
+    "name" : "DG_Formula",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "timeseries",
+      "sizeX" : 8,
+      "sizeY" : 5,
+      "resources" : [ ],
+      "templateHtml" : "<div id=\"vv\">0</div>",
+      "templateCss" : "    section {\r\n        width: 100%;\r\n        height: 100%;\r\n        border-bottom: 1px solid #777;\r\n        display: none;\r\n    }\r\n    #headerDGSE {\r\n        /*margin: auto;*/\r\n        padding: 0 20px;\r\n        display: flex;\r\n        justify-content: space-between;\r\n        align-items: center;\r\n        width: 100%;\r\n        border: 1px solid #777;\r\n        border-bottom: none;\r\n    }\r\n    #dotDGSE {\r\n        /*height: 12px;*/\r\n        /*width: 12px;*/\r\n        /*border-radius: 50%;*/\r\n        /*background: red;*/\r\n        color: #01280;\r\n    }\r\n\r\n\r\ntable {\r\n    text-align: center;\r\n    width: 100%;\r\n    border-collapse: collapse;\r\n}\r\ntd, tr, th {\r\n  /*border-top: 1px solid #777;  */\r\n  padding: 5px 0;\r\n}\r\n.wrappper {\r\n    height: 100%;\r\n    border: 1px solid #777;\r\n}\r\n\r\n.data-container5 {\r\n        display: flex;\r\n        flex-direction: column;\r\n        margin: 10px;\r\n    }\r\n\r\n    .data-row5 {\r\n        display: flex;\r\n        justify-content: space-between;\r\n        margin-bottom: 2px;\r\n        line-height: 20px;\r\n    }\r\n\r\n    .data-key5 {\r\n        margin-right: 5px;\r\n        color: #01280;\r\n        align-content: flex-start;\r\n    }\r\n    \r\n    .data-value5 {\r\n        color: green;\r\n        align-content: flex-end;\r\n        font-weight: 600;\r\n    }\r\n    \r\n    @media (min-height: 400px) {\r\n        .data-row5 {\r\n            font-size: 12px; /* Adjust font size */\r\n            margin-bottom: 2px; /* Adjust margin */\r\n        }\r\n    }",
+      "controllerScript" : "self.onInit = function() {\n    self.ctx.$scope.data = self.ctx.defaultSubscription\n        .data;\n    // document.getElementById('vv').innerText\n    console.log(self.ctx.data)\n};\n\nself.onDataUpdated = function() {\n     console.log(self.ctx.data)\n  \n};\n",
+      "settingsSchema" : "{}",
+      "dataKeySettingsSchema" : "{}",
+      "latestDataKeySettingsSchema" : "{}",
+      "settingsDirective" : "tb-flot-line-widget-settings",
+      "dataKeySettingsDirective" : "tb-flot-line-key-settings",
+      "latestDataKeySettingsDirective" : "tb-flot-latest-key-settings",
+      "hasBasicMode" : true,
+      "basicModeDirective" : "tb-flot-basic-config",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"function\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"First\",\"color\":\"#2196f3\",\"settings\":{\"showLines\":true,\"fillLines\":true,\"showPoints\":false},\"_hash\":0.8587686344902596,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"},{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Second\",\"color\":\"#ffc107\",\"settings\":{\"showLines\":true,\"fillLines\":false,\"showPoints\":false},\"_hash\":0.12775350966079668,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"hideInterval\":false,\"hideLastInterval\":false,\"hideQuickInterval\":false,\"hideAggregation\":false,\"hideAggInterval\":false,\"hideTimezone\":false,\"selectedTab\":1,\"history\":{\"historyType\":1,\"fixedTimewindow\":{\"startTimeMs\":1713551400000,\"endTimeMs\":1713637799999},\"interval\":173000},\"aggregation\":{\"type\":\"AVG\",\"limit\":50000}},\"showTitle\":false,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"0\",\"settings\":{\"stack\":false,\"fontSize\":10,\"fontColor\":\"#545454\",\"showTooltip\":true,\"tooltipIndividual\":false,\"tooltipCumulative\":false,\"hideZeros\":false,\"grid\":{\"verticalLines\":true,\"horizontalLines\":true,\"outlineWidth\":1,\"color\":\"#545454\",\"backgroundColor\":null,\"tickColor\":\"#DDDDDD\"},\"xaxis\":{\"title\":null,\"showLabels\":true,\"color\":\"#545454\"},\"yaxis\":{\"min\":null,\"max\":null,\"title\":null,\"showLabels\":true,\"color\":\"#545454\",\"tickSize\":null,\"tickDecimals\":0,\"ticksFormatter\":\"\"},\"shadowSize\":4,\"smoothLines\":false,\"comparisonEnabled\":false,\"xaxisSecond\":{\"axisPosition\":\"top\",\"title\":null,\"showLabels\":true},\"showLegend\":true,\"legendConfig\":{\"direction\":\"column\",\"position\":\"bottom\",\"sortDataKeys\":false,\"showMin\":false,\"showMax\":false,\"showAvg\":true,\"showTotal\":false,\"showLatest\":false},\"customLegendEnabled\":false},\"title\":\"DG_Formula\",\"dropShadow\":true,\"enableFullscreen\":true,\"titleStyle\":{\"fontSize\":\"16px\",\"fontWeight\":400},\"mobileHeight\":null,\"configMode\":\"advanced\",\"actions\":{},\"showTitleIcon\":false,\"titleIcon\":\"thermostat\",\"iconColor\":\"#1F6BDD\",\"useDashboardTimewindow\":false,\"displayTimewindow\":true,\"titleFont\":null,\"titleColor\":null,\"enableDataExport\":true,\"margin\":\"0\",\"widgetStyle\":{},\"widgetCss\":\"\",\"pageSize\":1024,\"noDataDisplayMessage\":\"\"}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "ee180e90-1d83-11ef-982c-0f5367becb87"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

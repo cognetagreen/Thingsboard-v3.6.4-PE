@@ -1,0 +1,43 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "{\n\"Plant_Name\" : \"Hybrid.Brilliant Printer\",\n\"Capacity\" : {\n\"Capacity\" : 720,\n\"BESS Capacity\" : null,\n\"DG Capacity\" : 1404\n},\n\"Energy_System\" : \"Captive\",\n\"Latitude\" : 7.1951501,\n\"Longitude\" : 80.0409392,\n\"AC_Capacity\" : 300,\n\"country\" : \"India\",\n\"timeZone\" : \"Asia/Colombo\",\n\"type\" : \"PV-DG\"\n}"
+    },
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "asset_profile",
+        "sortOrder" : "NONE"
+      } ],
+      "settings" : { },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : false,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "d703c1b0-9c02-11ef-848d-f5df72fbc0d4"
+    },
+    "name" : "Brilliant Printer 720 kW",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "f57b0d30-9c00-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ASSET"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "groupEntities" : true
+}

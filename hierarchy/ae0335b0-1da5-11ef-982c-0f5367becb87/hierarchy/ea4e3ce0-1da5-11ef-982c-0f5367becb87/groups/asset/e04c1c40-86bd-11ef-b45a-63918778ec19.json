@@ -1,0 +1,43 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "{\n\"Plant_Name\" : \"Hybrid.SPV10\",\n\"Capacity\" : {\n\"Capacity\" : 900,\n\"BESS Capacity\" : null,\n\"DG Capacity\" : null\n},\n\"Energy_System\" : \"Captive\",\n\"Latitude\" : 40.416775,\n\"Longitude\" : -3.703790,\n\"AC_Capacity\" : 300,\n\"country\" : \"Spain\",\n\"timeZone\" : \"Europe/Madrid\",\n\"type\" : \"PV-BESS\"\n}"
+    },
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "asset_profile",
+        "sortOrder" : "NONE"
+      } ],
+      "settings" : { },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : false,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "e04c1c40-86bd-11ef-b45a-63918778ec19"
+    },
+    "name" : "SPV Spain 10 MW",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    },
+    "type" : "ASSET"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "groupEntities" : true
+}

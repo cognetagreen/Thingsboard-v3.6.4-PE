@@ -20,31 +20,43 @@
     },
     "deviceProfileId" : {
       "entityType" : "DEVICE_PROFILE",
-      "id" : "90f5e7e0-a7c7-11ef-848d-f5df72fbc0d4"
+      "id" : "162564e0-bc36-11ef-848d-f5df72fbc0d4"
     },
     "externalId" : null,
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "6725e530-a661-11ef-848d-f5df72fbc0d4"
     },
-    "label" : "Inverter-16",
-    "name" : "Mal660-INV-16",
+    "label" : "PCS-1",
+    "name" : "MAL680-PCS-1",
     "ownerId" : {
       "entityType" : "CUSTOMER",
       "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
     },
     "softwareId" : null,
-    "type" : "MAL_INV"
+    "type" : "Mal_PCS"
   },
   "credentials" : {
-    "credentialsId" : "ubybmhS9EL7BHhVvpasV",
+    "credentialsId" : "ZmJwN9FSETSky2AKFJ5S",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
   "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "078e34c0-7041-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "6725e530-a661-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
     "additionalInfo" : [ {
-      "label" : "Inverter-16"
+      "label" : "PCS-1"
     } ],
     "from" : {
       "entityType" : "ASSET",
@@ -52,7 +64,7 @@
     },
     "to" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "6725e530-a661-11ef-848d-f5df72fbc0d4"
     },
     "type" : "Contains",
     "typeGroup" : "COMMON"
@@ -63,7 +75,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1734624767995,
+      "lastUpdateTs" : 1735792160824,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -71,16 +83,16 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1734606445273,
-      "longValue" : 1734606445271,
+      "lastUpdateTs" : 1735792154766,
+      "longValue" : 1735792154703,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1736159084720,
-      "longValue" : 1736159083093,
+      "lastUpdateTs" : 1736159054719,
+      "longValue" : 1736159053986,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ ]

@@ -1,0 +1,57 @@
+{
+  "entityType" : "ENTITY_VIEW",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "endTimeMs" : 0,
+    "entityId" : {
+      "entityType" : "DEVICE",
+      "id" : "062b0d90-1d87-11ef-982c-0f5367becb87"
+    },
+    "externalId" : null,
+    "keys" : {
+      "attributes" : {
+        "cs" : null,
+        "sh" : null,
+        "ss" : null
+      },
+      "timeseries" : [ "INV_Total_Power", "INV_DailyEnergy_Total" ]
+    },
+    "name" : "Brilliant Printer 720kW",
+    "startTimeMs" : 0,
+    "type" : "ASSETS",
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "id" : {
+      "entityType" : "ENTITY_VIEW",
+      "id" : "521961c0-1f4e-11ef-982c-0f5367becb87"
+    },
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : 13.777415425868796,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1717161400220,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 77.31366720805819,
+      "jsonValue" : null,
+      "key" : "longitude",
+      "lastUpdateTs" : 1717161430669,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

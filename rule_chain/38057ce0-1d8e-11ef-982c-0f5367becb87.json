@@ -1,0 +1,182 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "38122710-1d8e-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "38057ce0-1d8e-11ef-982c-0f5367becb87"
+    },
+    "name" : "Dash_Board_Data",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 983,
+        "layoutY" : 270
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3811d8f0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "Plant total data",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 325,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var Test={};\nif(metadata.deviceName === \"cal\"){\n   Test.BP_Plant_Daily_Energy=(msg.INV_DailyEnergy_Total_cal);\n   Test.SL_Plant_Daily_Energy1=(msg.Node_SL_PV_Daily_Energy);\n   Test.BP_Plant_Total_Power=(msg.INV_Total_Power_cal);\n   Test.SL_Plant_Total_Power=(msg.SL_INV_Total_Power);\n}\n\n\nreturn{msg:Test};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "38122710-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "filt_device",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 711,
+        "layoutY" : 35
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "BP_Plant_Total_Power",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "SL_Plant_Total_Power",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "x+y",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "DB_Plant_Total_Power",
+          "resultValuePrecision" : 2,
+          "addToBody" : true,
+          "addToMetadata" : true
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "38124e20-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "DB_Plant_Total_Power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 642,
+        "layoutY" : 320
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "BP_Plant_Daily_Energy",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "SL_Plant_Daily_Energy1",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "x+y",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "DB_Plant_Total_Energy",
+          "resultValuePrecision" : 2,
+          "addToBody" : true,
+          "addToMetadata" : true
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "38129c40-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "DB_Plant_Total_Energy",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

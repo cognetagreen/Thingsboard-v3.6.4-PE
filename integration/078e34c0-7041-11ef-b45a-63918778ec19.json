@@ -1,0 +1,86 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "clientConfiguration" : {
+        "host" : "localhost",
+        "port" : 1884,
+        "cleanSession" : false,
+        "retainedMessage" : true,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
+        "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "xyz",
+          "password" : "abc"
+        }
+      },
+      "topicFilters" : [ {
+        "filter" : "POC/ESS/Data/Periodic",
+        "qos" : 1
+      } ],
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "cd46fb50-70d9-11ef-b45a-63918778ec19"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "078e34c0-7041-11ef-b45a-63918778ec19"
+    },
+    "name" : "Maldives680MQTT_DEIF_ASC_150STO_BESS1",
+    "remote" : false,
+    "routingKey" : "c7a16fdd-56cf-6c7f-c8b9-8ab5b7fa4657",
+    "secret" : "71cqvygtd28yf9k06a9g",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "078e34c0-7041-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "1ebcdd10-70da-11ef-b45a-63918778ec19"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "078e34c0-7041-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "6725e530-a661-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_vmi1456118.contaboserver.net",
+      "lastUpdateTs" : 1735792160233,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

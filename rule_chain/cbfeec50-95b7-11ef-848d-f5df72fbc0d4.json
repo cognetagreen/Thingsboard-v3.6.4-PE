@@ -1,0 +1,451 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "d96e4110-95b7-11ef-848d-f5df72fbc0d4"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "cbfeec50-95b7-11ef-848d-f5df72fbc0d4"
+    },
+    "name" : "Durtek Portfolio Formulas",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 9,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 6,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 300,
+        "layoutY" : 84
+      },
+      "configuration" : {
+        "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "POST_TELEMETRY_REQUEST", "TO_SERVER_RPC_REQUEST" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d96e4110-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "m1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 277,
+        "layoutY" : 176
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"inv_agg\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1517e610-95e2-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Calc device Filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 279,
+        "layoutY" : 246
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\nvar suffix = metadata.deviceName.split(\"_\")[0]; //It is Name of Perticular Custome/Plant\n\n// ****INVERTER TOTAL POWER****\nif(msg.INV_Total_Power >= 0) {\n    newMsg[\"INV_Total_Power\" + \"_\" + suffix] = msg.INV_Total_Power;\n} \n\n// ***** DG Total Power *******\nif(msg.DG_Total_Power >= 0) {\n    newMsg[\"DG_Total_Power\" + \"_\" + suffix] = msg.DG_Total_Power;\n}\n\n// ***** DG Total Energy *******\nif(msg.DG_Total_Energy >= 0) {\n    newMsg[\"DG_Total_Energy\" + \"_\" + suffix] = msg.DG_Total_Energy;\n}\n\n// **** INVERTER ENERGY ******\nif (msg.PV_Daily_Energy_Today >= 0) {\n    newMsg[\"PV_Daily_Energy_Today\" + \"_\" + suffix] = msg.PV_Daily_Energy_Today;\n    newMsg[\"PV_Daily_Revenue\" + \"_\" + suffix] = msg.PV_Daily_Energy_Today * 3;\n}\n\n// **** INVERTER TOTAL ENERGY ****\nif(msg.PV_Total_Energy_kWh >= 0) {\n    newMsg[\"PV_Total_Energy_kWh\" + \"_\" + suffix] = msg.PV_Total_Energy_kWh;\n}\n\n// **** Grid Export ******\nif(msg.Grid_Daily_Energy_Export_kWh >= 0) {\n    newMsg[\"Grid_Daily_Energy_Export_kWh\" + \"_\" + suffix] = msg.Grid_Daily_Energy_Export_kWh;\n}\n\n// **** PCS POWER *******\nif(msg.PCS_Total_Power >= 0) {\n    newMsg[\"PCS_Total_Power\" + \"_\" + suffix] = msg.PCS_Total_Power;\n}\n\n// **** PCS Energy *******\nif(msg.PCS_Total_Discharge_kWh >= 0) {\n    newMsg[\"PCS_Total_Discharge_kWh\" + \"_\" + suffix] = msg.PCS_Total_Discharge_kWh;\n}\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9e3ae770-95e3-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 277,
+        "layoutY" : 313
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        },
+        "originatorSource" : "CUSTOMER",
+        "entityType" : null,
+        "entityNamePattern" : null
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c75843a0-95e3-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "To customer",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 280,
+        "layoutY" : 372
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c75906f0-95e3-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "To customer save",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 527,
+        "layoutY" : 266
+      },
+      "configuration" : {
+        "detailsList" : [ "ID", "TITLE", "ADDITIONAL_INFO" ],
+        "fetchTo" : "DATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fd58cf40-95e5-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "customer wise filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetCustomerDetailsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 83,
+        "layoutY" : 561
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "INV_Total_Power_Durtek", "PV_Daily_Revenue_Durtek", "PV_Daily_Energy_Today_Durtek", "PV_Total_Energy_kWh_Durtek", "Grid_Daily_Energy_Export_kWh_Durtek", "DG_Total_Power_Durtek", "INV_Total_Power_cal", "PV_Daily_Energy_Today_cal", "PV_Daily_Revenue_cal", "PV_Total_Energy_kWh_cal", "DG_Total_Power_cal", "Grid_Daily_Energy_Export_kWh_cal", "DG_Total_Energy_Durtek", "DG_Total_Power_Mal", "INV_Total_Power_Mal", "PV_Daily_Energy_Today_Mal", "PV_Total_Energy_kWh_Mal", "PV_Daily_Revenue_Mal", "PCS_Total_Power_Mal", "PCS_Total_Discharge_kWh_Mal", "DG_Total_Energy_Mal" ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "699f29b0-95e6-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Taking value from customer",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 86,
+        "layoutY" : 622
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "\nvar newMsg = {};\n// PV Power Aggregation\nnewMsg.INV_Portfolio_Power = msg.INV_Total_Power_Durtek + msg.INV_Total_Power_cal + msg.INV_Total_Power_Mal; // INV = PV i.e. PV_Portfolio_Power\n\n// DG Power Aggregation\nnewMsg.DG_Portfolio_Power = msg.DG_Total_Power_Durtek + msg.DG_Total_Power_cal + msg.DG_Total_Power_Mal;\n\n// PCS = BESS Power Aggregation\nnewMsg.PCS_Portfolio_Power = msg.PCS_Total_Power_Mal;\n\n// PCS Energy Aggregation\nnewMsg.PCS_Portfolio_Discharge_Energy = msg.PCS_Total_Discharge_kWh_Mal;\n\n// DG Energy Aggregation\nnewMsg.DG_Portfolio_Energy = msg.DG_Total_Energy_Durtek + msg.DG_Total_Energy_Mal;\n\n// Daily PV Energy Aggregation\nnewMsg.PV_Portfolio_Energy = msg.PV_Daily_Energy_Today_Durtek + msg.PV_Daily_Energy_Today_cal + msg.PV_Daily_Energy_Today_Mal;\n\n// Daily Revenue Aggregation\nnewMsg.PV_Portfolio_Revenue = msg.PV_Daily_Revenue_Durtek + msg.PV_Daily_Revenue_cal + msg.PV_Daily_Revenue_Mal;\n\n// Total PV Energy Aggregation\nnewMsg.PV_Portfolio_Total_Energy = msg.PV_Total_Energy_kWh_Durtek + msg.PV_Total_Energy_kWh_cal + msg.PV_Total_Energy_kWh_Mal;\n\n// Grid Daily Export Aggregation\nnewMsg.Grid_Portfolio_Daily_Energy_Export = msg.Grid_Daily_Energy_Export_kWh_Durtek + msg.Grid_Daily_Energy_Export_kWh_cal;\n\n// Total Portfolio Power = PV Power + BESS Power + Wind Power\nnewMsg.Total_Portfolio_Power = newMsg.INV_Portfolio_Power + newMsg.PCS_Portfolio_Power + newMsg.DG_Portfolio_Power;\n\n// Total Portfolio Energy\nnewMsg.Total_Portfolio_Energy = newMsg.PV_Portfolio_Energy + newMsg.DG_Portfolio_Energy + newMsg.PCS_Portfolio_Discharge_Energy;\n/*\nNote :- Date 04/11/24\n1. In top card of Portfolio dashboard Power card assigned with INV_Portfolio_Power,\n2. This will change to Total_Porfolio_Power.\n3. But Excluding DG_Portfolio_Power i.e Total_Portfolio_Power - DG_Porfolio_Power.\n*/\n\n// Source Contribution i.e. PV% BESS=PCS% WIND% DG%\nnewMsg.PV_Contribution = ((newMsg.PV_Portfolio_Energy / (newMsg.Total_Portfolio_Energy == 0? 1 : newMsg.Total_Portfolio_Energy)) * 100);\nnewMsg.DG_Contribution = ((newMsg.DG_Portfolio_Energy / (newMsg.Total_Portfolio_Energy == 0? 1 : newMsg.Total_Portfolio_Energy)) * 100);\nnewMsg.PCS_Contribution = ((newMsg.PCS_Portfolio_Discharge_Energy / (newMsg.Total_Portfolio_Energy == 0? 1 : newMsg.Total_Portfolio_Energy)) * 100);\n\n\n\nreturn {msg: newMsg};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a1c51840-95e6-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "aggregation customer level",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 88,
+        "layoutY" : 744
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6bab7f00-95e7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save to main customer",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 283,
+        "layoutY" : 426
+      },
+      "configuration" : {
+        "detailsList" : [ "ID", "TITLE", "ADDITIONAL_INFO" ],
+        "fetchTo" : "DATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "084d2700-95e8-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "ns",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetCustomerDetailsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 85,
+        "layoutY" : 683
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "Deif_Cal",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d0285270-95fe-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "to portfolio",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 77,
+        "layoutY" : 449
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "entityType" : "DEVICE",
+        "entityNamePattern" : "Deif_Cal",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "220a39c0-9c10-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "to deif portfolio",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 304,
+        "layoutY" : 489
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"Deif India\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "35690a10-9c14-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Deif Filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 80,
+        "layoutY" : 507
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9a5b7d50-9c18-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "save to portfolio",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "entityType" : "ENTITY_VIEW",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "endTimeMs" : 0,
+    "entityId" : {
+      "entityType" : "DEVICE",
+      "id" : "05f15ff0-1d87-11ef-982c-0f5367becb87"
+    },
+    "externalId" : null,
+    "keys" : {
+      "attributes" : {
+        "cs" : null,
+        "sh" : null,
+        "ss" : null
+      },
+      "timeseries" : [ "DC_VOLT_STR1", "DC_Power_STR1", "DC_VOLT_STR2", "DC_Power_STR2", "DC_VOLT_STR3", "DC_Power_STR3", "DC_VOLT_STR4", "DC_Power_STR4", "AC_Active_Power", "AC_Reactive_Power", "AC_Apparent_Power", "Energy_Total", "Energy_Daily", "VOLT_L1_L2", "VOLT_L2_L3", "VOLT_L3_L1", "Frequancy", "Active_Power_referance", "Inverter_Status", "Fault_Code", "Inverter_Communication", "grid_status", "Trip_Mode_Inv", "Generating_Mode_INV", "Non_Communicating_Inv" ]
+    },
+    "name" : "INV_4",
+    "startTimeMs" : 0,
+    "type" : "ASSETS",
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "id" : {
+      "entityType" : "ENTITY_VIEW",
+      "id" : "504fbfc0-1f16-11ef-982c-0f5367becb87"
+    },
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

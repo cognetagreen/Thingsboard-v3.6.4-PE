@@ -1,0 +1,21 @@
+{
+  "entityType" : "WIDGETS_BUNDLE",
+  "entity" : {
+    "alias" : "bdcomb",
+    "description" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGETS_BUNDLE",
+      "id" : "d870ff20-1d83-11ef-982c-0f5367becb87"
+    },
+    "image" : null,
+    "name" : "bdComb",
+    "order" : null,
+    "title" : "bdComb"
+  },
+  "fqns" : [ "comb1", "comb22", "comb3", "comb42" ],
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

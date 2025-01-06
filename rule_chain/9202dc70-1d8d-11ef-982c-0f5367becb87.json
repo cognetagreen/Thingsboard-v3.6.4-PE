@@ -1,0 +1,101 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "9217eb10-1d8d-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "9202dc70-1d8d-11ef-982c-0f5367becb87"
+    },
+    "name" : "Grid_%_load_power",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 287,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "AGC4_POWER_cal",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "load_power",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "(x/y)*100",
+        "result" : {
+          "type" : "MESSAGE_BODY",
+          "key" : "Grid_%_Load_Power",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9217eb10-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "Grid%_Load_Power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 660,
+        "layoutY" : 144
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "92188750-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "Grid%_Load_Power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

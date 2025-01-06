@@ -1,0 +1,116 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "e7937ef0-1d7f-11ef-982c-0f5367becb87"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "4c676ad0-7401-11ef-b45a-63918778ec19"
+    },
+    "label" : null,
+    "name" : "DL300.Block-1",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
+    },
+    "type" : "default"
+  },
+  "relations" : [ {
+    "additionalInfo" : [ {
+      "label" : "Grid-Meter"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4c676ad0-7401-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "8cb7f8e0-7189-11ef-b45a-63918778ec19"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : [ {
+      "label" : "Calculation"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4c676ad0-7401-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b92e7ef0-1d86-11ef-982c-0f5367becb87"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : [ {
+      "label" : "Inverter-1"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4c676ad0-7401-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "11512a50-5edd-11ef-b103-1f32ed31c997"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : [ {
+      "label" : "Inverter-3"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4c676ad0-7401-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "1449a9d0-5edd-11ef-b103-1f32ed31c997"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : [ {
+      "label" : "Inverter-2"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4c676ad0-7401-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "145590b0-5edd-11ef-b103-1f32ed31c997"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : [ {
+      "label" : "DG-1"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4c676ad0-7401-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3ea3a3b0-5ee8-11ef-b103-1f32ed31c997"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

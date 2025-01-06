@@ -1,0 +1,1273 @@
+{
+  "entityType" : "DEVICE_PROFILE",
+  "entity" : {
+    "default" : true,
+    "defaultDashboardId" : null,
+    "defaultEdgeRuleChainId" : null,
+    "defaultQueueName" : null,
+    "defaultRuleChainId" : null,
+    "description" : "",
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "93c5ca80-2261-11ef-982c-0f5367becb87"
+    },
+    "image" : null,
+    "name" : "BR_INV",
+    "profileData" : {
+      "alarms" : [ {
+        "alarmType" : "Inverter1 trip",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV1_Trip_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : true,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : "",
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV1_Trip_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "2c3debff-6151-271d-1988-55fde4840365",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter2 trip",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV2_Trip_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : "",
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV2_Trip_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "3a6b3a48-67c5-2dde-034a-517bc826cff5",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter3 trip",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV3_Trip_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : "",
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV3_Trip_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "723f6ca9-fd03-1da4-420a-1220eba1d5a1",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter4 Trip",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV4_Trip_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV4_Trip_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "a5495755-a00f-1b56-7e69-a3a13af7ade4",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter5 Trip",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV5_Trip_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV5_Trip_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "aa69b450-5a7d-e6fc-4080-deef6fe355bd",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter6 Trip",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV6_Trip_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV6_Trip_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "9d2bb138-2ed3-6ecd-3735-0dae76d7b6c1",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter1 communication",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV1_Non_Comm",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "WARNING" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV1_Non_Comm",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "5ffceba9-4e3b-4837-1fb4-efe6861fbb7a",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter2 communication",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV2_Non_Comm",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "WARNING" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV2_Non_Comm",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "3ac690a3-b812-cd47-6ade-5c46fcb8f4e7",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter3 communication",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV3_Non_Comm",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "WARNING" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV3_Non_Comm",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "a7ff8c4f-ab59-b907-b63d-5e4a6acec72b",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter4 communication",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV4_Non_Comm",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "WARNING" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV4_Non_Comm",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "cb11395a-6232-6197-471b-5e9045465f58",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter5 communication",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV5_Non_Comm",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "WARNING" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV5_Non_Comm",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "b39cabd2-19aa-75fe-e0f3-e350ae41bb99",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter6 communication",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV6_Non_Comm",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : false,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "WARNING" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV6_Non_Comm",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : {
+              "type" : "ANY_TIME",
+              "dynamicValue" : null,
+              "type" : "ANY_TIME"
+            }
+          }
+        },
+        "id" : "e157d81f-65bd-04fb-2a81-a25feb07271e",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter1 Generating Mode",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV1_Generating_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : true,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "MINOR" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV1_Generating_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : true,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "2e318023-cfa4-fadf-92b4-13ba9443b028",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter2 Generating Mode",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV2_Generating_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : true,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "MINOR" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV2_Generating_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : true,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "b3b81d04-1023-d0f4-f5cc-53b0f1d1f657",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter3 Generating Mode",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV3_Generating_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : true,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "MINOR" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV3_Generating_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : true,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "711168b9-d287-792b-1104-198524d104e0",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter4 Generating Mode",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV4_Generating_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : true,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "MINOR" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV4_Generating_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : true,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "cc6d5e99-4d7a-8dc2-7968-33a5a28f1b45",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter5 Generating Mode",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV5_Generating_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : true,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "MINOR" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV5_Generating_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : true,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "bfe427c0-e54d-d0ff-e249-d46647b81b06",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Inverter6 Generating Mode",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "INV6_Generating_Mode",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "STRING",
+                "ignoreCase" : true,
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "false",
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "STRING"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "MINOR" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "INV6_Generating_Mode",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : true,
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : "true",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "c8b2100d-cdbd-fa50-1579-347b1ddcafc0",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      } ],
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "provisionConfiguration" : {
+        "type" : "DISABLED",
+        "provisionDeviceSecret" : null
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "provisionDeviceKey" : null,
+    "provisionType" : "DISABLED",
+    "softwareId" : null,
+    "transportType" : "DEFAULT",
+    "type" : "DEFAULT"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

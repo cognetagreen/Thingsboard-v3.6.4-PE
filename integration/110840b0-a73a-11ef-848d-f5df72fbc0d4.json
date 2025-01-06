@@ -1,0 +1,62 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "clientConfiguration" : {
+        "host" : "localhost",
+        "port" : 1884,
+        "cleanSession" : false,
+        "retainedMessage" : true,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
+        "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "xyz",
+          "password" : "abc"
+        }
+      },
+      "topicFilters" : [ {
+        "filter" : "POC/INV/Data/Periodic",
+        "qos" : 1
+      } ],
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "c8487460-a718-11ef-848d-f5df72fbc0d4"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "110840b0-a73a-11ef-848d-f5df72fbc0d4"
+    },
+    "name" : "Maldives660kW_Inverter",
+    "remote" : false,
+    "routingKey" : "0d134ed4-c974-941f-3f31-1f4ca7ebfc12",
+    "secret" : "avbofeccr6io07j5kjen",
+    "type" : "MQTT"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_vmi1456118.contaboserver.net",
+      "lastUpdateTs" : 1734673120248,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

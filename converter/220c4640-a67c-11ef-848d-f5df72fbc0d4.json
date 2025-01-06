@@ -1,0 +1,29 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "scriptLang" : "TBEL",
+      "decoder" : null,
+      "tbelDecoder" : "// Decode an uplink message from a buffer\n// payload - array of bytes\n// metadata - key/value object\n\n/** Decoder **/\n\n// decode payload to string\nvar payloadStr = decodeToString(payload);\n\n// decode payload to JSON\n var data = decodeToJson(payload);\n\nvar deviceName = 'BESS1';\n// Result object with device/asset attributes/telemetry data\nvar result = [{\n// Use deviceName and deviceType or assetName and assetType, but not both.\n   deviceName: \"MAL660-DG-1\",\n   telemetry: {\n       //rawData: payloadStr,\n       AC_Active_Power_Watt:data[0].data.DG1_kW,\n       AC_Reactive_Power_var:data[0].data.DG1_kVar,\n   \n   }\n},\n{\n// Use deviceName and deviceType or assetName and assetType, but not both.\n   deviceName: \"MAL660-DG-2\",\n   telemetry: {\n       //rawData: payloadStr,\n       AC_Active_Power_Watt:data[0].data.DG2_kW,\n       AC_Reactive_Power_var:data[0].data.DG2_kVar,\n       \n\n   }\n},\n{\n// Use deviceName and deviceType or assetName and assetType, but not both.\n   deviceName: \"MAL660-DG-3\",\n   telemetry: {\n       //rawData: payloadStr,\n       AC_Active_Power_Watt:data[0].data.DG3_kW,\n       AC_Reactive_Power_var:data[0].data.DG3_kVar,\n      \n   }\n},\n{\n// Use deviceName and deviceType or assetName and assetType, but not both.\n   deviceName: \"MAL660-DG-4\",\n   telemetry: {\n       //rawData: payloadStr,\n       AC_Active_Power_Watt:data[0].data.DG4_kW,\n       AC_Reactive_Power_var:data[0].data.DG4_kVAr,\n      \n   }\n},\n{\n    deviceName : \"Mal_Device\",\n    telemetry : {\n        DG_Total_Power : data[0].data.DG1_kW + data[0].data.DG2_kW + data[0].data.DG3_kW + data[0].data.DG4_kW,\n        DG_Total_kWh : data[1].data.Total_kWh,\n        DG_Year_kWh : data[1].data.Year_kWh,\n        DG_Month_kWh : data[1].data.Month_kWh,\n        DG_Week_kWh : data[1].data.Week_kWh,\n        DG_Total_Energy : data[1].data.Daily_kWh,\n        DG_Energy_Cost : (data[1].data.Daily_kWh*10.78) //Diesel Energy cost DG USD 0.70/kWh converted to Maldives currency\n    }\n}\n\n];\n\n/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/\n\nreturn result;",
+      "encoder" : null,
+      "tbelEncoder" : null,
+      "updateOnlyKeys" : [ "manufacturer" ]
+    },
+    "debugMode" : true,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "220c4640-a67c-11ef-848d-f5df72fbc0d4"
+    },
+    "name" : "Maldives660kW_DG_Integration",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

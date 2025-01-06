@@ -1,0 +1,29 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "scriptLang" : "TBEL",
+      "decoder" : null,
+      "tbelDecoder" : "// Decode an uplink message from a buffer\n// payload - array of bytes\n// metadata - key/value object\n\n/** Decoder **/\n\n// decode payload to string\nvar payloadStr = decodeToString(payload);\n\n// decode payload to JSON\n var data = decodeToJson(payload);\n\nvar deviceName = 'ASC';\n//var deviceType = 'thermostat';\n//var customerName = 'Customer C';\n//var groupName = 'thermostat devices';\n//var manufacturer = 'Example corporation';\n// use assetName and assetType instead of deviceName and deviceType\n// to automatically create assets instead of devices.\n// var assetName = 'Asset A';\n// var assetType = 'building';\n\n// Result object with device/asset attributes/telemetry data\nvar result = [{\n// Use deviceName and deviceType or assetName and assetType, but not both.\n   deviceName: deviceName,\n   //deviceType: deviceType,\n// assetName: assetName,\n// assetType: assetType,\n// customerName: customerName,\n   //groupName: groupName,\n   //attributes: {\n   //    model: 'Model A',\n   //    serialNumber: 'SN111',\n   //    integrationName: metadata['integrationName'],\n   //    manufacturer: manufacturer\n  // },\n   telemetry: {\n       //rawData: payloadStr,\n       ASC4_VOLT_L1_L2:(data.PV_ESS_Voltage_L1_L2)/10,\n       ASC4_VOLT_L2_L3:(data.PV_ESS_Voltage_L2_L3)/10,\n       ASC4_VOLT_L3_L1:(data.PV_ESS_Voltage_L3_L1)/10,\n       ASC4_VOLT_L1_N:(data.PV_ESS_Voltage_L1_N)/10,\n       ASC4_VOLT_L2_N:(data.PV_ESS_Voltage_L2_N)/10,\n       ASC4_VOLT_L3_N:(data.PV_ESS_Voltage_L3_N)/10,\n       ASC4_HZ_L1:(data.PV_ESS_Frequency_L1)/100,\n       ASC4_HZ_L2:(data.PV_ESS_Frequency_L2)/100,\n       ASC4_HZ_L3:(data.PV_ESS_Frequency_L3)/100,\n       ASC4_VOLT_ANG_L1_L2:data.PV_ESS_Voltage_phase_angle_L1_L2,\n       ASC4_VOLT_ANG_L2_L3:data.PV_ESS_Voltage_phase_angle_L2_L3,\n       ASC4_VOLT_ANG_L3_L1:data.PV_ESS_Voltage_phase_angle_L3_L1,\n       ASC4_AMP_L1:(data.PV_ESS_Current_L1)/10,\n       ASC4_AMP_L2:(data.PV_ESS_Current_L2)/10,\n       ASC4_AMP_L3:(data.PV_ESS_Current_L3)/10,\n       ASC4_POWER_L1:data.PV_ESS_Power_L1,\n       ASC4_POWER_L2:data.PV_ESS_Power_L2,\n       ASC4_POWER_L3:data.PV_ESS_Power_L3,\n       ASC4_POWER:data.PV_ESS_Power,\n       ASC4_REACTIVE_POWER_L1:data.PV_ESS_Reactive_power_L1,\n       ASC4_REACTIVE_POWER_L2:data.PV_ESS_Reactive_power_L2,\n       ASC4_REACTIVE_POWER_L3:data.PV_ESS_Reactive_power_L3,\n       ASC4_REACTIVE_POWER:data.PV_ESS_Reactive_power,\n       ASC4_APPARENT_POWER_L1:data.PV_ESS_Apparent_power_L1,\n       ASC4_APPARENT_POWER_L2:data.PV_ESS_Apparent_power_L2,\n       ASC4_APPARENT_POWER_L3:data.PV_ESS_Apparent_power_L3,\n       ASC4_APPARENT_POWER:data.PV_ESS_Apparent_power,\n       ASC4_PF:(data.Power_factor)/100,\n       ASC4_ENERGY_DAILY:(data.PV_Energy_Daily)/1000,\n       ASC4_ENERGY_Total:(data.PV_Energy_Total)/1000,\n\n    \n   }\n},\n{\n    deviceName : \"cal\",\n    telemetry : {\n        PV_Total_Energy_kWh : ((data.PV_Energy_Total)/1000),\n    }\n}\n];\n\n/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/\n\nreturn result;",
+      "encoder" : null,
+      "tbelEncoder" : null,
+      "updateOnlyKeys" : [ "manufacturer" ]
+    },
+    "debugMode" : true,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "0303ab50-1d86-11ef-982c-0f5367becb87"
+    },
+    "name" : "ASC4_Data_Converter",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

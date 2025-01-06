@@ -1,0 +1,1387 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "186357e0-1d8e-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "184cc2a0-1d8e-11ef-982c-0f5367becb87"
+    },
+    "name" : "try",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 5,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 18,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 19,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 20,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 21,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 28,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 34,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 38,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 39,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 24,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 23,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 32,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 33,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 7,
+      "type" : "True"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 8,
+      "type" : "True"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 9,
+      "type" : "True"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 11,
+      "type" : "True"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 13,
+      "type" : "True"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 30,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 33,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 25,
+      "toIndex" : 26,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 26,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 27,
+      "toIndex" : 28,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 29,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 30,
+      "toIndex" : 31,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 32,
+      "toIndex" : 31,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 35,
+      "type" : "True"
+    }, {
+      "fromIndex" : 35,
+      "toIndex" : 36,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 36,
+      "toIndex" : 37,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 38,
+      "toIndex" : 25,
+      "type" : "True"
+    }, {
+      "fromIndex" : 39,
+      "toIndex" : 22,
+      "type" : "True"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 249,
+        "layoutY" : 32
+      },
+      "configuration" : {
+        "messageTypes" : [ "POST_TELEMETRY_REQUEST" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "186357e0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "M1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 592,
+        "layoutY" : 4
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "SL_Inverter_Cabinet_Temperature_TmpCab",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "CONSTANT",
+          "key" : "10",
+          "name" : "y"
+        } ],
+        "customFunction" : "x+y",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "sabir1",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1864b770-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "E1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 614,
+        "layoutY" : 55
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "AGC_ENGINE_SPEED",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "CONSTANT",
+          "key" : 5,
+          "name" : "y"
+        } ],
+        "customFunction" : "x+y",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "sabir2",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1865a1d0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "E2",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 910,
+        "layoutY" : 0
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1865eff0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "S1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 934,
+        "layoutY" : 68
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "186812d0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "S2",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 624,
+        "layoutY" : 106
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "SL_Bus_B_frequency_L1",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "CONSTANT",
+          "key" : 100,
+          "name" : "y"
+        } ],
+        "customFunction" : "x+y",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "sabir3",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "186839e0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "E3",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 905,
+        "layoutY" : 116
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "186a0ea0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "name" : "S3",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 0,
+        "layoutY" : 276
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_DGRuntime_SL('B1_DG_DG_1_AC_Active_Power_Watt','Node_SL_PV_Daily_Energy_PrevDay','delta_INV_kWh_DG_ON','PV_Daily_Energy','DL300-Grid Meter-1);",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6f347de0-346f-11ef-b789-8bf9281d7591"
+      },
+      "name" : "server",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 0,
+        "layoutY" : 339
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var runtime =  {}; \n\n    // runtime.temp2 = msg.SL_Generator_power;\n\n    runtime.Node_DG_Runtime = 0;\n    runtime.Node_DG_Runtime_instance = 0;\n    runtime.Node_DG_DieselUsed = 0;\n    runtime.Node_fuelConsumption = 0;\n    runtime.Node_DG_Saving = 0;\n    \n    var DeviceName = \"\";\n    var Key = \"\";\n    var power = 0;\n    var delta_INV_kWh_DG_ON = 0;\n    var SL_Generator_Export_active_energy_counter_day = 0;\n    \n    if(msg.rows.length > 0) {\n        \n        msg.rows.forEach(function(element) {\n            DeviceName = element.name_1;\n            Key = element.key_1;\n            if (runtime.Node_DG_Runtime_instance % 2 != 0) {\n                runtime.Node_DG_Runtime += Number(element.interval_min);\n            }\n            else {\n                     delta_INV_kWh_DG_ON = Number(element.delta_inv_kwh_dg_on);\n            }\n            power = Number(element.long_v_1);\n            SL_Generator_Export_active_energy_counter_day = Number(element.sl_generator_export_active_energy_counter_day);\n    \n            runtime.Node_DG_Runtime_instance += 1;\n        });\n    \n            runtime.Node_DG_Runtime_instance = Math.round(runtime.Node_DG_Runtime_instance / 2);\n            runtime.Node_DG_Runtime -= runtime.Node_DG_Runtime_instance;\n        \n            if (runtime.Node_DG_Runtime == 0) {\n                runtime.Node_DG_Saving = 0;\n            } else {\n                var rel_cap = (runtime.Node_DG_Runtime * 300 * 0.8) / 60;\n                var load = SL_Generator_Export_active_energy_counter_day / rel_cap;\n        \n                if (load >= 0 && load <= 0.249) {\n                    runtime.Node_DG_DieselUsed = 30.91;\n                } else if (load >= 0.25 && load <= 0.499) {\n                    runtime.Node_DG_DieselUsed = 51.37;\n                } else if (load >= 0.50 && load <= 0.749) {\n                    runtime.Node_DG_DieselUsed = 73.19;\n                } else if (load >= 0.75 && load <= 1.00) {\n                    runtime.Node_DG_DieselUsed = 97.74;\n                }\n                 var dieselUsedCurrentLoad = load * runtime.Node_DG_DieselUsed;\n                runtime.Node_fuelConsumption = dieselUsedCurrentLoad * 85;\n                var noOfUnit = (SL_Generator_Export_active_energy_counter_day) * dieselUsedCurrentLoad;\n                var fuelCost = 85 / noOfUnit;\n                if(runtime.fuelCost == null) {\n                    fuelCost = 0;\n                }\n            // runtime.temp1 = fuelCost;\n                runtime.Node_DG_Saving = Math.abs((delta_INV_kWh_DG_ON)*(fuelCost - 3));\n            }\n    }\n    else {\n        runtime.temp = msg.rows.length;\n    }\n\nreturn { msg: runtime, metadata: metadata, msgType: msgType };\n\n\n\n\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "de841950-3472-11ef-b789-8bf9281d7591"
+      },
+      "name" : "Durtek_Runtime",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 352,
+        "layoutY" : 373
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_DGRuntime ('AGC_POWER','AGC_1');",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b2ff2340-3483-11ef-b789-8bf9281d7591"
+      },
+      "name" : "Server use for Brilliant Printers AGC1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 370,
+        "layoutY" : 509
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var response =  {}; // Assume the response is in msg.data\nvar runtime = {};\n\n\n    response = msg.rows;\n    \nvar GeneratorDailyEnergySum = 0;\n// if(metadata.deviceName == \"cal\") {\n//     GeneratorDailyEnergySum = msg.Generator_Daily_energy_sum;\n// }\n// if (metadata.deviceName == \"AGC_1\") {\n    runtime.Node_DG_Runtime_AGC1 = 0;\n    runtime.Node_DG_Runtime_instance_AGC1 = 0;\n    runtime.Node_DG_DieselUsed_AGC1 = 0;\n    runtime.Node_DG_FuelCost_AGC1 = 0;\n\n    var DeviceName = \"\";\n    var Key = \"\";\n    var power = 0;\n    if(response.length > 0) {\n    \n\n        response.forEach(function(element) {\n            DeviceName = element.name_1;\n            Key = element.key_1;\n            if (runtime.Node_DG_Runtime_instance_AGC1 % 2 != 0) {\n                runtime.Node_DG_Runtime_AGC1 += Number(element.interval_min) * 5;\n            }\n            power = element.long_v_1;\n            runtime.Node_DG_Runtime_instance_AGC1 += 1;\n        });\n    \n            runtime.Node_DG_Runtime_instance_AGC1 = Math.round(runtime.Node_DG_Runtime_instance_AGC1 / 2);\n            runtime.Node_DG_Runtime_AGC1 -= runtime.Node_DG_Runtime_instance_AGC1;\n        \n            if (runtime.Node_DG_Runtime_AGC1 == 0) {\n                runtime.Node_DG_FuelCost_AGC1 = 0;\n            } else {\n                var rel_cap = (runtime.Node_DG_Runtime_AGC1 * 700 * 0.8) / 60;\n                var load = power / rel_cap;\n        \n                if (load >= 0 && load <= 0.249) {\n                    runtime.Node_DG_DieselUsed_AGC1 = 30.91;\n                } else if (load >= 0.25 && load <= 0.499) {\n                    runtime.Node_DG_DieselUsed_AGC1 = 51.37;\n                } else if (load >= 0.50 && load <= 0.749) {\n                    runtime.Node_DG_DieselUsed_AGC1 = 73.19;\n                } else if (load >= 0.75 && load <= 1.00) {\n                    runtime.Node_DG_DieselUsed_AGC1 = 97.74;\n                }\n        \n                var dieselUsedCurrentLoad_AGC1 = load * runtime.Node_DG_DieselUsed_AGC1;\n                var fuelConsumption = dieselUsedCurrentLoad_AGC1 * 85;\n                // var noOfUnit = GeneratorDailyEnergySum * dieselUsedCurrentLoad_AGC1;\n                // var fuelCost = 85 / noOfUnit;\n                // runtime.Node_DG_FuelCost_AGC1 = fuelCost;\n            }\n    }\n// }\n\nreturn { msg: runtime, metadata: metadata, msgType: msgType };\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b2ff7160-3483-11ef-b789-8bf9281d7591"
+      },
+      "name" : "Runtime Saving of AGC1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 522,
+        "layoutY" : 335
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_DGRuntime ('AGC_POWER','AGC_2');",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "72018c50-348a-11ef-b789-8bf9281d7591"
+      },
+      "name" : "Server Runtime for Brilliant Printers",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 726,
+        "layoutY" : 572
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "720276b0-348a-11ef-b789-8bf9281d7591"
+      },
+      "name" : "c2",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 795,
+        "layoutY" : 259
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_DGRuntime ('AGC_POWER','AGC_3');",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "72062030-348a-11ef-b789-8bf9281d7591"
+      },
+      "name" : "Server Runtime for Brilliant Printers",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 878,
+        "layoutY" : 407
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var response =  {}; // Assume the response is in msg.data\r\nvar runtime = {};\r\n\r\n\r\n    response = msg.rows;\r\n    \r\nvar GeneratorDailyEnergySum = 0;\r\n// if(metadata.deviceName == \"cal\") {\r\n//     GeneratorDailyEnergySum = msg.Generator_Daily_energy_sum;\r\n// }\r\n// if (metadata.deviceName == \"AGC_1\") {\r\n    runtime.Node_DG_Runtime_AGC3 = 0;\r\n    runtime.Node_DG_Runtime_instance_AGC3 = 0;\r\n    runtime.Node_DG_DieselUsed_AGC3 = 0;\r\n    runtime.Node_DG_FuelCost_AGC3 = 0;\r\n\r\n    var DeviceName = \"\";\r\n    var Key = \"\";\r\n    var power = 0;\r\n    if(response.length > 0) {\r\n    \r\n\r\n        response.forEach(function(element) {\r\n            DeviceName = element.name_1;\r\n            Key = element.key_1;\r\n            if (runtime.Node_DG_Runtime_instance_AGC3 % 2 != 0) {\r\n                runtime.Node_DG_Runtime_AGC3 += Number(element.interval_min) * 5;\r\n            }\r\n            power = element.long_v_1;\r\n            runtime.Node_DG_Runtime_instance_AGC3 += 1;\r\n        });\r\n    \r\n            runtime.Node_DG_Runtime_instance_AGC3 = Math.round(runtime.Node_DG_Runtime_instance_AGC3 / 2);\r\n            runtime.Node_DG_Runtime_AGC3 -= runtime.Node_DG_Runtime_instance_AGC3;\r\n        \r\n            if (runtime.Node_DG_Runtime_AGC3 == 0) {\r\n                runtime.Node_DG_FuelCost_AGC3 = 0;\r\n            } else {\r\n                var rel_cap = (runtime.Node_DG_Runtime_AGC3 * 700 * 0.8) / 60;\r\n                var load = power / rel_cap;\r\n        \r\n                if (load >= 0 && load <= 0.249) {\r\n                    runtime.Node_DG_DieselUsed_AGC3 = 30.91;\r\n                } else if (load >= 0.25 && load <= 0.499) {\r\n                    runtime.Node_DG_DieselUsed_AGC3 = 51.37;\r\n                } else if (load >= 0.50 && load <= 0.749) {\r\n                    runtime.Node_DG_DieselUsed_AGC3 = 73.19;\r\n                } else if (load >= 0.75 && load <= 1.00) {\r\n                    runtime.Node_DG_DieselUsed_AGC3 = 97.74;\r\n                }\r\n        \r\n                var dieselUsedCurrentLoad_AGC3 = load * runtime.Node_DG_DieselUsed_AGC3;\r\n                var fuelConsumption = dieselUsedCurrentLoad_AGC3 * 85;\r\n                // var noOfUnit = GeneratorDailyEnergySum * dieselUsedCurrentLoad_AGC3;\r\n                // var fuelCost = 85 / noOfUnit;\r\n                // runtime.Node_DG_FuelCost_AGC3 = fuelCost;\r\n            }\r\n    }\r\n// }\r\n\r\nreturn { msg: runtime, metadata: metadata, msgType: msgType };\r\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "96e010e0-348b-11ef-b789-8bf9281d7591"
+      },
+      "name" : "Runtime for Brilliant Printers",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 971,
+        "layoutY" : 555
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "96e05f00-348b-11ef-b789-8bf9281d7591"
+      },
+      "name" : "c3",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 694,
+        "layoutY" : 812
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2a36ea10-3498-11ef-b789-8bf9281d7591"
+      },
+      "name" : "w22",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 14,
+        "layoutY" : 418
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d297ea0-35c1-11ef-b789-8bf9281d7591"
+      },
+      "name" : "s1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 0,
+        "layoutY" : 208
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == \"Durtek_Device\") {\n    return true;\n}\nelse {\nreturn false;\n}\n",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e62a1390-369c-11ef-b789-8bf9281d7591"
+      },
+      "name" : "durtek",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 321,
+        "layoutY" : 274
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == \"AGC_1\") {\n    return true;\n}\nelse {\nreturn false;\n}\n",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "05ae7290-36f9-11ef-b789-8bf9281d7591"
+      },
+      "name" : "AGC_1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 447,
+        "layoutY" : 227
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == 'AGC_2') {\n    return true;\n}\nelse {\nreturn false;\n}\n",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "05ae99a0-36f9-11ef-b789-8bf9281d7591"
+      },
+      "name" : "AGC_2",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 604,
+        "layoutY" : 173
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == \"AGC_3\") {\n    return true;\n}\nelse {\nreturn false;\n}\n",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "05aec0b0-36f9-11ef-b789-8bf9281d7591"
+      },
+      "name" : "AGC_3",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1141,
+        "layoutY" : 198
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/call usp_get_DailyDeviceSummary();",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8bb27420-370f-11ef-b789-8bf9281d7591"
+      },
+      "name" : "server",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 612,
+        "layoutY" : 441
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var response =  {}; // Assume the response is in msg.data\r\nvar runtime = {};\r\n\r\n\r\n    response = msg.rows;\r\n    \r\nvar GeneratorDailyEnergySum = 0;\r\n// if(metadata.deviceName == \"cal\") {\r\n//     GeneratorDailyEnergySum = msg.Generator_Daily_energy_sum;\r\n// }\r\n// if (metadata.deviceName == \"AGC_1\") {\r\n    runtime.Node_DG_Runtime_AGC2 = 0;\r\n    runtime.Node_DG_Runtime_instance_AGC2 = 0;\r\n    runtime.Node_DG_DieselUsed_AGC2 = 0;\r\n    runtime.Node_DG_FuelCost_AGC2 = 0;\r\n\r\n    var DeviceName = \"\";\r\n    var Key = \"\";\r\n    var power = 0;\r\n    if(response.length > 0) {\r\n    \r\n\r\n        response.forEach(function(element) {\r\n            DeviceName = element.name_1;\r\n            Key = element.key_1;\r\n            if (runtime.Node_DG_Runtime_instance_AGC2 % 2 != 0) {\r\n                runtime.Node_DG_Runtime_AGC2 += Number(element.interval_min) * 5;\r\n            }\r\n            power = element.long_v_1;\r\n            runtime.Node_DG_Runtime_instance_AGC2 += 1;\r\n        });\r\n    \r\n            runtime.Node_DG_Runtime_instance_AGC2 = Math.round(runtime.Node_DG_Runtime_instance_AGC2 / 2);\r\n            runtime.Node_DG_Runtime_AGC2 -= runtime.Node_DG_Runtime_instance_AGC2;\r\n        \r\n            if (runtime.Node_DG_Runtime_AGC2 == 0) {\r\n                runtime.Node_DG_FuelCost_AGC2 = 0;\r\n            } else {\r\n                var rel_cap = (runtime.Node_DG_Runtime_AGC2 * 700 * 0.8) / 60;\r\n                var load = power / rel_cap;\r\n        \r\n                if (load >= 0 && load <= 0.249) {\r\n                    runtime.Node_DG_DieselUsed_AGC2 = 30.91;\r\n                } else if (load >= 0.25 && load <= 0.499) {\r\n                    runtime.Node_DG_DieselUsed_AGC2 = 51.37;\r\n                } else if (load >= 0.50 && load <= 0.749) {\r\n                    runtime.Node_DG_DieselUsed_AGC2 = 73.19;\r\n                } else if (load >= 0.75 && load <= 1.00) {\r\n                    runtime.Node_DG_DieselUsed_AGC2 = 97.74;\r\n                }\r\n        \r\n                var dieselUsedCurrentLoad_AGC2 = load * runtime.Node_DG_DieselUsed_AGC2;\r\n                var fuelConsumption = dieselUsedCurrentLoad_AGC2 * 85;\r\n                // var noOfUnit = GeneratorDailyEnergySum * dieselUsedCurrentLoad_AGC2;\r\n                // var fuelCost = 85 / noOfUnit;\r\n                // runtime.Node_DG_FuelCost_AGC2 = fuelCost;\r\n            }\r\n    }\r\n// }\r\n\r\nreturn { msg: runtime, metadata: metadata, msgType: msgType };\r\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1c57ac10-3833-11ef-b789-8bf9281d7591"
+      },
+      "name" : "Runtime Saving of AGC1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 446,
+        "layoutY" : 642
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d1acbec0-3a18-11ef-b789-8bf9281d7591"
+      },
+      "name" : "AGC1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 136,
+        "layoutY" : 498
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_LastDayValue_param_array(ARRAY['151', '153','386']);",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6dbee3d0-3ad0-11ef-b789-8bf9281d7591"
+      },
+      "name" : "server",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 130,
+        "layoutY" : 614
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\nvar sum = 1\nmsg.rows.forEach(function(elem){\n        \n    if(elem.key_1 == 151) {\n        newMsg.SL_PV_DailyEnergy_PrevDay = elem.value_v_1;\n    }\n    if(elem.key_1 == 153) {\n        newMsg.SL_Grid_Daily_Energy_Import_kWh_PrevDay = elem.value_v_1;\n    }\n    if(elem.key_1 == 386) {\n        newMsg.Node_SL_PV_Daily_Energy_PrevDay = elem.value_v_1\n    }\n})\n\n\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f3bb0d40-3ad2-11ef-b789-8bf9281d7591"
+      },
+      "name" : "Node_SL_PV_DailyEnergy",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 132,
+        "layoutY" : 684
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f3bb8270-3ad2-11ef-b789-8bf9281d7591"
+      },
+      "name" : "pv1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 151,
+        "layoutY" : 782
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "PV_Daily_Energy",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "SL_PV_DailyEnergy_PrevDay",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "x - y",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "Node_SL_PV_Daily_Energy",
+          "resultValuePrecision" : 2,
+          "addToBody" : true,
+          "addToMetadata" : true
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ff8578b0-3adf-11ef-b789-8bf9281d7591"
+      },
+      "name" : "node",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 391,
+        "layoutY" : 776
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ff85c6d0-3adf-11ef-b789-8bf9281d7591"
+      },
+      "name" : "pv2",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 878,
+        "layoutY" : 697
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "MESSAGE_BODY",
+          "key" : "Node_DG_Runtime_AGC1",
+          "name" : "x",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "x",
+        "result" : {
+          "type" : "MESSAGE_BODY",
+          "key" : "R1",
+          "resultValuePrecision" : 2,
+          "addToBody" : true,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0407c8b0-3b31-11ef-b789-8bf9281d7591"
+      },
+      "name" : "tet",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1195,
+        "layoutY" : 703
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newmsg = {};\n\nnewmsg.RT1 = msg.R1;\n\nreturn {msg: newmsg};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "026f58f0-3b32-11ef-b789-8bf9281d7591"
+      },
+      "name" : "TEST2",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 882,
+        "layoutY" : 776
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "MESSAGE_BODY",
+          "key" : "Node_DG_Runtime_AGC2",
+          "name" : "x",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "x",
+        "result" : {
+          "type" : "MESSAGE_BODY",
+          "key" : "R2",
+          "resultValuePrecision" : 2,
+          "addToBody" : true,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9838cee0-3b35-11ef-b789-8bf9281d7591"
+      },
+      "name" : "tet1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 906,
+        "layoutY" : 870
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newmsg = {};\n\nnewmsg.RT3 = msg.Node_DG_Runtime_AGC1;\nnewmsg.RT4 = msg.Node_DG_Runtime_AGC2;\n\nreturn {msg: newmsg};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "491b7130-3b37-11ef-b789-8bf9281d7591"
+      },
+      "name" : "TEST3",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 989,
+        "layoutY" : 250
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == \"DL300-Inverter-1\") {\n    return true;\n}\nelse {\nreturn false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "df27efa0-3c63-11ef-bd3d-ff4c2bdc015d"
+      },
+      "name" : "Durtek Inverter 1 Filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1071,
+        "layoutY" : 321
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.cogneta.cloud/api/sql/SELECT * FROM fn_get_Genenration_Loss_DeviceID('11512a50-5edd-11ef-b103-1f32ed31c997','B1_Inverter_Inverter_1_Active_Power_reference', 'B1_Inverter_Inverter_1_AC_Active_Power_Watt', 100, 12);",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "df2b9920-3c63-11ef-bd3d-ff4c2bdc015d"
+      },
+      "name" : "server",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1141,
+        "layoutY" : 418
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "\nvar inv = {};\nif(msg.rows.length>0) {\n    inv.Node_Generation_Loss_BP = 0;\n    msg.rows.forEach(function(elem){\n        inv.Node_Generation_Loss_BP += elem.generation_loss_v;\n    });\n    \n    inv.Node_Generation_Loss_BP = inv.Node_Generation_Loss_BP.toFixed(2);\n}\n\nreturn {msg: inv, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "df2c3560-3c63-11ef-bd3d-ff4c2bdc015d"
+      },
+      "name" : "Inverters Generation Loss",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1154,
+        "layoutY" : 504
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fd1fe710-3c63-11ef-bd3d-ff4c2bdc015d"
+      },
+      "name" : "inv",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 190,
+        "layoutY" : 328
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceName == \"DL300-Grid Meter-1\") {\n    return true;\n}\nelse {\nreturn false;\n}\n",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0e793ed0-755d-11ef-b45a-63918778ec19"
+      },
+      "name" : "durtek",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 911,
+        "layoutY" : 173
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"inv_agg\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fd4a4f80-a99d-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Filter to inv_agg device type",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

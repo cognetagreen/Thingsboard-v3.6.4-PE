@@ -4,11 +4,11 @@
     "additionalInfo" : {
       "gateway" : false,
       "overwriteActivityTime" : false,
-      "description" : ""
+      "description" : "{\n\"Plant_Name\" : \"Hybrid.Durtek Lanka\"\n}"
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
     },
     "deviceData" : {
       "configuration" : {
@@ -20,50 +20,62 @@
     },
     "deviceProfileId" : {
       "entityType" : "DEVICE_PROFILE",
-      "id" : "90f5e7e0-a7c7-11ef-848d-f5df72fbc0d4"
+      "id" : "69c014b0-2262-11ef-982c-0f5367becb87"
     },
     "externalId" : null,
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "1449a9d0-5edd-11ef-b103-1f32ed31c997"
     },
-    "label" : "Inverter-16",
-    "name" : "Mal660-INV-16",
+    "label" : "Inverter-3",
+    "name" : "DL300-Inverter-3",
     "ownerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+      "id" : "ea4e3ce0-1da5-11ef-982c-0f5367becb87"
     },
     "softwareId" : null,
-    "type" : "MAL_INV"
+    "type" : "DURTEK_INV"
   },
   "credentials" : {
-    "credentialsId" : "ubybmhS9EL7BHhVvpasV",
+    "credentialsId" : "K9raSX0FnLDDQ6OO3Qt6",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
   "relations" : [ {
-    "additionalInfo" : [ {
-      "label" : "Inverter-16"
-    } ],
+    "additionalInfo" : null,
     "from" : {
-      "entityType" : "ASSET",
-      "id" : "5bc11b90-a663-11ef-848d-f5df72fbc0d4"
+      "entityType" : "INTEGRATION",
+      "id" : "84f9c7c0-1d86-11ef-982c-0f5367becb87"
     },
     "to" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "1449a9d0-5edd-11ef-b103-1f32ed31c997"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : [ {
+      "label" : "Inverter-3"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4c676ad0-7401-11ef-b45a-63918778ec19"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "1449a9d0-5edd-11ef-b103-1f32ed31c997"
     },
     "type" : "Contains",
     "typeGroup" : "COMMON"
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ {
-      "booleanValue" : true,
+      "booleanValue" : false,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1734624767995,
+      "lastUpdateTs" : 1735656308228,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -71,16 +83,16 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1734606445273,
-      "longValue" : 1734606445271,
+      "lastUpdateTs" : 1735656308222,
+      "longValue" : 1735656308219,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1736159084720,
-      "longValue" : 1736159083093,
+      "lastUpdateTs" : 1735655699711,
+      "longValue" : 1735655696782,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ ]

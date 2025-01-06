@@ -1,0 +1,44 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "control",
+    "name" : "Control",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "timeseries",
+      "sizeX" : 7,
+      "sizeY" : 4.5,
+      "resources" : [ {
+        "url" : "https://code.highcharts.com/highcharts.js"
+      }, {
+        "url" : "https://code.highcharts.com/modules/exporting.js"
+      }, {
+        "url" : "https://code.highcharts.com/modules/export-data.js"
+      } ],
+      "templateHtml" : "\r\n<div id=\"Control\" class=\"Con\" style=\"width: 100%;\"></div>\r\n\r\n\r\n",
+      "templateCss" : ".Con {\n    height: 100%;\n    /*padding-top: 20px;*/\n}\n.legend {\n    font-size: 13px;\n    line-height: 10px;\n}\n\n.legend table { \n    border-spacing: 0px;\n    border-collapse: separate;\n}\n\n.mouse-events .flot-overlay {\n    cursor: crosshair; \n}\n\n",
+      "controllerScript" : "var myChart;\r\n\r\nself.onInit = function() {\r\n    \r\n    var chartData = {\r\n        series: []\r\n    };\r\n\r\n    for (var i=0; i < self.ctx.data.length; i++) {\r\n        var dataKey = self.ctx.data[i].dataKey;\r\n        var series = {\r\n            name: dataKey.label,\r\n            data: [],\r\n            color: dataKey.color\r\n        };\r\n        chartData.series.push(series);\r\n    }\r\n\r\n    var options = {\r\n        chart: {\r\n            type: 'line',\r\n            height: '40%', // Set initial height to 50%\r\n        events: {\r\n            load: function () {\r\n                this.reflow(); // Trigger reflow on chart load\r\n            }\r\n        },\r\n            renderTo: 'Control',\r\n        },\r\n        title: false,\r\n        // text: 'Active Power' \r\n        // },\r\n        tooltip: {\r\n            shared : true,\r\n        },\r\n        xAxis: {\r\n                type: 'datetime',\r\n                tickPixelInterval: 150,\r\n        },\r\n        yAxis: {\r\n            title: {\r\n                text: \"% kW Ref\"\r\n            }\r\n        },\r\n        legend: {\r\n            enabled: false\r\n        },\r\n        plotOptions: {\r\n            series: {\r\n                marker: {\r\n                    enabled: false\r\n                },\r\n            shadow: {\r\n                color: 'rgba(0, 0, 0, 0.1)', // Shadow color\r\n                offsetX: 1, // Horizontal offset of the shadow\r\n                offsetY: 1, // Vertical offset of the shadow\r\n                opacity: 0.3, // Shadow opacity\r\n                blur: 2 // Shadow blur\r\n            }\r\n            }\r\n        },\r\n        exporting: {\r\n        buttons: {\r\n            contextButton: {\r\n                menuItems: ['downloadCSV', 'downloadPNG'] // Specify CSV and PNG download options\r\n            }\r\n        }\r\n    },\r\n    credits: {\r\n            enabled: false // Remove Highcharts logo\r\n        }\r\n    };\r\n    \r\n    myChart = new Highcharts.Chart(options);\r\n    self.onResize();\r\n}\r\n\r\nself.onResize = function() {\r\n    if (myChart) {\r\n        myChart.reflow();\r\n    }\r\n}\r\n\r\nself.onDataUpdated = function() {\r\n    for (var i = 0; i < self.ctx.data.length; i++) {\r\n        var datasourceData = self.ctx.data[i];\r\n        var dataSet = datasourceData.data;\r\n        var series = myChart.series[i];\r\n        if (!series) {\r\n            series = myChart.addSeries({\r\n                name: datasourceData.dataKey.label,\r\n                data: []\r\n            }, false);\r\n        }\r\n        var data = dataSet.map(function(tsValuePair) {\r\n            var timestamp = tsValuePair[0] + (5.5 * 3600 * 1000); // Add 5.5 hours (IST) to the timestamp\r\n            return { x: timestamp, y: tsValuePair[1] };\r\n        });\r\n        series.setData(data, true);\r\n    }\r\n}\r\n\r\n\r\n",
+      "settingsSchema" : "{}",
+      "dataKeySettingsSchema" : "{}",
+      "latestDataKeySettingsSchema" : "{}",
+      "settingsDirective" : "tb-flot-line-widget-settings",
+      "dataKeySettingsDirective" : "tb-flot-line-key-settings",
+      "latestDataKeySettingsDirective" : "tb-flot-latest-key-settings",
+      "hasBasicMode" : true,
+      "basicModeDirective" : "tb-flot-basic-config",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"function\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"First\",\"color\":\"#2196f3\",\"settings\":{\"showLines\":true,\"fillLines\":true,\"showPoints\":false},\"_hash\":0.8587686344902596,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"},{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Second\",\"color\":\"#ffc107\",\"settings\":{\"showLines\":true,\"fillLines\":false,\"showPoints\":false},\"_hash\":0.12775350966079668,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":true,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{\"stack\":false,\"fontSize\":10,\"fontColor\":\"#545454\",\"showTooltip\":true,\"tooltipIndividual\":false,\"tooltipCumulative\":false,\"hideZeros\":false,\"grid\":{\"verticalLines\":true,\"horizontalLines\":true,\"outlineWidth\":1,\"color\":\"#545454\",\"backgroundColor\":null,\"tickColor\":\"#DDDDDD\"},\"xaxis\":{\"title\":null,\"showLabels\":true,\"color\":\"#545454\"},\"yaxis\":{\"min\":null,\"max\":null,\"title\":null,\"showLabels\":true,\"color\":\"#545454\",\"tickSize\":null,\"tickDecimals\":0,\"ticksFormatter\":\"\"},\"shadowSize\":4,\"smoothLines\":false,\"comparisonEnabled\":false,\"xaxisSecond\":{\"axisPosition\":\"top\",\"title\":null,\"showLabels\":true},\"showLegend\":true,\"legendConfig\":{\"direction\":\"column\",\"position\":\"bottom\",\"sortDataKeys\":false,\"showMin\":false,\"showMax\":false,\"showAvg\":true,\"showTotal\":false,\"showLatest\":false},\"customLegendEnabled\":false},\"title\":\"Control\",\"dropShadow\":true,\"enableFullscreen\":true,\"titleStyle\":{\"fontSize\":\"16px\",\"fontWeight\":400},\"mobileHeight\":null,\"configMode\":\"basic\",\"actions\":{},\"showTitleIcon\":false,\"titleIcon\":\"thermostat\",\"iconColor\":\"#1F6BDD\"}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "c6bd9810-1d83-11ef-982c-0f5367becb87"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

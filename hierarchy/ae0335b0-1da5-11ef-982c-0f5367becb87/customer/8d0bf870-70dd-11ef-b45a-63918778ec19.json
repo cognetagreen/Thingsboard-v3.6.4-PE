@@ -1,0 +1,42 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "{\n\"Plant_Name\" : \"Hybrid.Maldives\",\n\"Capacity\" : {\n\"Capacity\" : 680,\n\"BESS Capacity\" : \"6 MWh\",\n\"DG Capacity\" : \"12 MW\"\n},\n\"Energy_System\" : \"Captive\",\n\"Latitude\" : 3.2028,\n\"Longitude\" : 73.2207,\n\"AC_Capacity\" : 680\n}",
+      "allowWhiteLabeling" : true,
+      "homeDashboardId" : null,
+      "homeDashboardHideToolbar" : true
+    },
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : "Maldives",
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "email" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "8d0bf870-70dd-11ef-b45a-63918778ec19"
+    },
+    "name" : "Hybrid.Maldives 680 kW",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "parentCustomerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "phone" : null,
+    "state" : null,
+    "title" : "Hybrid.Maldives 680 kW",
+    "zip" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

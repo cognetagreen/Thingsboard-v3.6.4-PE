@@ -1,0 +1,243 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "f50b56d0-1d8d-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "f4e13990-1d8d-11ef-982c-0f5367becb87"
+    },
+    "name" : "Durtek_INV_today_energy",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 832,
+        "layoutY" : 152
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f507fb70-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "delta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 354,
+        "layoutY" : 152
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var currentTime = new Date();\nvar current_hours = currentTime.getHours() + 5;\nvar Test={};\nif((metadata.deviceName === \"Durtek_INV_3\") && (current_hours === 23)){\n   Test.tt=msg.SL_Inverter_WattHours_WH; \n}\nif((metadata.deviceName === \"Durtek_INV_1\") && (current_hours === 23)){\n   Test.INV_1_Prev_Day_Gen=msg.SL_Inverter_WattHours_WH; \n}\nif((metadata.deviceName === \"Durtek_INV_2\") && (current_hours === 23)){\n   Test.INV_2_Prev_Day_Gen=msg.SL_Inverter_WattHours_WH; \n}\n\n\nreturn{msg:Test};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f50b56d0-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "test",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 596,
+        "layoutY" : 276
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "tt",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "SL_Inverter_WattHours_WH",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "y-x",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "INV_3_TODAY_GEN",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f510ae00-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "INV_3_TODAY_GEN",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 597,
+        "layoutY" : 329
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "INV_2_Prev_Day_Gen",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "SL_Inverter_WattHours_WH",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "y-x",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "INV_2_TODAY_GEN",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f510fc20-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "INV_2_TODAY_GEN",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 596,
+        "layoutY" : 377
+      },
+      "configuration" : {
+        "operation" : "CUSTOM",
+        "arguments" : [ {
+          "type" : "TIME_SERIES",
+          "key" : "INV_1_Prev_Day_Gen",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "SL_Inverter_WattHours_WH",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "customFunction" : "y-x",
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "INV_1_TODAY_GEN",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f5140960-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "INV_1_TODAY_GEN",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

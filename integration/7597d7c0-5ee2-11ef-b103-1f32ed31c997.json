@@ -1,0 +1,86 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "clientConfiguration" : {
+        "host" : "localhost",
+        "port" : 1884,
+        "cleanSession" : false,
+        "retainedMessage" : true,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
+        "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "xyz",
+          "password" : "abc"
+        }
+      },
+      "topicFilters" : [ {
+        "filter" : "Cogneta/SL01/Meter/Data",
+        "qos" : 1
+      } ],
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "75686350-5ee2-11ef-b103-1f32ed31c997"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "7597d7c0-5ee2-11ef-b103-1f32ed31c997"
+    },
+    "name" : "MQTT integration DL300_Meter_DG",
+    "remote" : false,
+    "routingKey" : "7df5f516-df0d-fa7f-c327-f65932a672f5",
+    "secret" : "i76yv6c31zahw9xd6551",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "7597d7c0-5ee2-11ef-b103-1f32ed31c997"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "8cb7f8e0-7189-11ef-b45a-63918778ec19"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "7597d7c0-5ee2-11ef-b103-1f32ed31c997"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3ea3a3b0-5ee8-11ef-b103-1f32ed31c997"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_vmi1456118.contaboserver.net",
+      "lastUpdateTs" : 1734673863297,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

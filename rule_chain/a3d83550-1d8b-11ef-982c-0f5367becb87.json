@@ -1,0 +1,1185 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "a4089420-1d8b-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "a3d83550-1d8b-11ef-982c-0f5367becb87"
+    },
+    "name" : "Root Rule Chain",
+    "root" : true,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Other"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "RPC Request to Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 9,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 10,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 11,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 12,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 13,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 14,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 15,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 16,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 17,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 18,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 19,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 20,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 21,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 22,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 23,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 24,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 25,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 26,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 27,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 28,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 29,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Activity Event"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Attributes Updated"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Connect Event"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Entity Created"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Entity Updated"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Inactivity Event"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Other"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 30,
+      "type" : "Timeseries Updated"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 31,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 31,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 32,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 32,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 32,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 33,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 33,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 34,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 34,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 34,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 35,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 35,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 35,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 36,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 36,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 36,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 37,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 37,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 37,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 38,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 38,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 38,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 39,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 39,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 39,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 1,
+      "type" : "False"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "True"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 1,
+      "type" : "False"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "True"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 5,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 8,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 999,
+        "layoutY" : 271
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a3f707f0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Save Timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 566,
+        "layoutY" : 302
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a3f951e0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Message Type Switch",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1000,
+        "layoutY" : 381
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);",
+        "tbelScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a3fb74c0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Log RPC from Device",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 997,
+        "layoutY" : 494
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);",
+        "tbelScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a3fcd450-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Log Other",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1000,
+        "layoutY" : 583
+      },
+      "configuration" : {
+        "timeoutInSeconds" : 60
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a3ff1e40-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "RPC Call Request",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 255,
+        "layoutY" : 301
+      },
+      "configuration" : {
+        "originatorTypes" : [ "ENTITY_GROUP" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a400a4e0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Is Entity Group",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 319,
+        "layoutY" : 109
+      },
+      "configuration" : {
+        "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a403b220-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Post attributes or RPC request",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 627,
+        "layoutY" : 108
+      },
+      "configuration" : {
+        "entityGroupId" : null,
+        "entityGroupIsMessageOriginator" : true
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a407d0d0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Duplicate To Group Entities",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToGroupNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "Process incoming messages from devices with the alarm rules defined in the device profile. Dispatch all incoming messages with \"Success\" relation type.",
+        "layoutX" : 137,
+        "layoutY" : 415
+      },
+      "configuration" : {
+        "persistAlarmRulesState" : false,
+        "fetchAlarmRulesStateOnStart" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a4089420-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Device Profile Node",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 796,
+        "layoutY" : 643
+      },
+      "configuration" : {
+        "ruleChainId" : "e0fcac90-1d8b-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a409cca0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "TF",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 795,
+        "layoutY" : 589
+      },
+      "configuration" : {
+        "ruleChainId" : "01b26470-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a40c3da0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Saving",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 552,
+        "layoutY" : 655
+      },
+      "configuration" : {
+        "ruleChainId" : "1f75de60-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a40ed5b0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Absolute_Load_power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 555,
+        "layoutY" : 719
+      },
+      "configuration" : {
+        "ruleChainId" : "41166b70-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a4100e30-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "load_power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 558,
+        "layoutY" : 773
+      },
+      "configuration" : {
+        "ruleChainId" : "5c6032d0-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a410d180-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "cuf",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 100,
+        "layoutY" : 548
+      },
+      "configuration" : {
+        "ruleChainId" : "7bdaab90-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a4116dc0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "avg_load_power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 365,
+        "layoutY" : 730
+      },
+      "configuration" : {
+        "ruleChainId" : "9b6243b0-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a411e2f0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "avg_inv_power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 60,
+        "layoutY" : 656
+      },
+      "configuration" : {
+        "ruleChainId" : "c1985e70-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a412f460-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "avg_Gen_Power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 40,
+        "layoutY" : 742
+      },
+      "configuration" : {
+        "ruleChainId" : "eac43990-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a413dec0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "avg_Agc_Power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 821,
+        "layoutY" : 722
+      },
+      "configuration" : {
+        "ruleChainId" : "2d469790-1d8d-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a414a210-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "CO2_Saving",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 825,
+        "layoutY" : 777
+      },
+      "configuration" : {
+        "ruleChainId" : "7bdaab90-1d8c-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a4153e50-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "avg_load",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 835,
+        "layoutY" : 97
+      },
+      "configuration" : {
+        "ruleChainId" : "5261a560-1d8d-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a415da90-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "INV_%_LoadPower",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 841,
+        "layoutY" : 144
+      },
+      "configuration" : {
+        "ruleChainId" : "9202dc70-1d8d-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a4164fc0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Grid_%_LoadPower",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 880,
+        "layoutY" : 191
+      },
+      "configuration" : {
+        "ruleChainId" : "b5e93ad0-1d8d-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a4171310-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Gen_%_LoadPower",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 355,
+        "layoutY" : 780
+      },
+      "configuration" : {
+        "ruleChainId" : "d8112050-1d8d-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a4176130-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Grid status",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 267,
+        "layoutY" : 639
+      },
+      "configuration" : {
+        "ruleChainId" : "f4e13990-1d8d-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a417d660-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "delta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 100,
+        "layoutY" : 811
+      },
+      "configuration" : {
+        "ruleChainId" : "184cc2a0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a417fd70-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "try",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 214,
+        "layoutY" : 701
+      },
+      "configuration" : {
+        "ruleChainId" : "38057ce0-1d8e-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a41872a0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "Plant Total Power Enaegy",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 555,
+        "layoutY" : 820
+      },
+      "configuration" : {
+        "ruleChainId" : "53787720-1d8e-11ef-982c-0f5367becb87"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a418e7d0-1d8b-11ef-982c-0f5367becb87"
+      },
+      "name" : "DG_ON_OFF",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 333,
+        "layoutY" : 831
+      },
+      "configuration" : {
+        "ruleChainId" : "1161e130-3fe6-11ef-bd3d-ff4c2bdc015d"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5d3965e0-3fe8-11ef-bd3d-ff4c2bdc015d"
+      },
+      "name" : "runtim 5",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 829,
+        "layoutY" : 838
+      },
+      "configuration" : {
+        "ruleChainId" : "ad355610-418e-11ef-8b69-e59cb59c4833"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "edce3390-418e-11ef-8b69-e59cb59c4833"
+      },
+      "name" : "Last Value Telemetry",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1043,
+        "layoutY" : 726
+      },
+      "configuration" : {
+        "ruleChainId" : "f5a9ee70-763a-11ef-b45a-63918778ec19"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "09085b80-763d-11ef-b45a-63918778ec19"
+      },
+      "name" : "Solar Gen DG ON",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1053,
+        "layoutY" : 785
+      },
+      "configuration" : {
+        "ruleChainId" : "cc5ffd50-8159-11ef-b45a-63918778ec19"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "edf32770-815a-11ef-b45a-63918778ec19"
+      },
+      "name" : "Plant Downtime",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1055,
+        "layoutY" : 842
+      },
+      "configuration" : {
+        "ruleChainId" : "ee15eed0-8264-11ef-b45a-63918778ec19"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2232b130-8265-11ef-b45a-63918778ec19"
+      },
+      "name" : "Inverter Availability",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1055,
+        "layoutY" : 668
+      },
+      "configuration" : {
+        "ruleChainId" : "c7e68160-8f76-11ef-848d-f5df72fbc0d4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f5477ab0-8f76-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Durtek Solar Saving",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1257,
+        "layoutY" : 828
+      },
+      "configuration" : {
+        "ruleChainId" : "fd402b70-9135-11ef-848d-f5df72fbc0d4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7d50bf00-9136-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Durtek Availability",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1249,
+        "layoutY" : 772
+      },
+      "configuration" : {
+        "ruleChainId" : "ed668480-95b6-11ef-848d-f5df72fbc0d4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0a6268b0-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Durtek Generation Loss",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1251,
+        "layoutY" : 714
+      },
+      "configuration" : {
+        "ruleChainId" : "cbfeec50-95b7-11ef-848d-f5df72fbc0d4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0461bcd0-95b8-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Durtek Portfolio Formulas",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1258,
+        "layoutY" : 661
+      },
+      "configuration" : {
+        "ruleChainId" : "84b0b0c0-a702-11ef-848d-f5df72fbc0d4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2801cc20-a70b-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "MALDIVES MIN MAX",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1254,
+        "layoutY" : 605
+      },
+      "configuration" : {
+        "ruleChainId" : "cdfa1f90-bb94-11ef-848d-f5df72fbc0d4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f91c9a90-bb94-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "Plant wise Source Contribution - Energy",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1257,
+        "layoutY" : 553
+      },
+      "configuration" : {
+        "ruleChainId" : "31d6c7b0-bc36-11ef-848d-f5df72fbc0d4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "537001c0-bc36-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "PCS Charge - Min & Max",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

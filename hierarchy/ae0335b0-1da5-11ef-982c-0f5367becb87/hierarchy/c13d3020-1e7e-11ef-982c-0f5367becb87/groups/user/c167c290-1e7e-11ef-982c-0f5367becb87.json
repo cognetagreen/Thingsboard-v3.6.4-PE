@@ -1,0 +1,196 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "first_name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "last_name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "email",
+        "sortOrder" : "NONE"
+      } ],
+      "settings" : { },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : true,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "c167c290-1e7e-11ef-982c-0f5367becb87"
+    },
+    "name" : "All",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "type" : "USER"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "groupEntities" : true,
+  "permissions" : [ {
+    "entityGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "73bd9920-1f1e-11ef-982c-0f5367becb87"
+    },
+    "entityGroupType" : "ENTITY_VIEW",
+    "roleId" : {
+      "entityType" : "ROLE",
+      "id" : "07f24f50-1da3-11ef-982c-0f5367becb87"
+    },
+    "tenantId" : {
+      "entityType" : "TENANT",
+      "id" : "e70f33c0-1d7f-11ef-982c-0f5367becb87"
+    },
+    "userGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "c167c290-1e7e-11ef-982c-0f5367becb87"
+    },
+    "createdTime" : 1717140112669,
+    "id" : {
+      "entityType" : "GROUP_PERMISSION",
+      "id" : "73f4fcd0-1f1e-11ef-982c-0f5367becb87"
+    },
+    "name" : "GROUP_[c167c290-1e7e-11ef-982c-0f5367becb87]_[07f24f50-1da3-11ef-982c-0f5367becb87]_[73bd9920-1f1e-11ef-982c-0f5367becb87]_[ENTITY_VIEW]",
+    "public" : false
+  }, {
+    "entityGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "7bb8a8b0-1f0d-11ef-982c-0f5367becb87"
+    },
+    "entityGroupType" : "ENTITY_VIEW",
+    "roleId" : {
+      "entityType" : "ROLE",
+      "id" : "07f24f50-1da3-11ef-982c-0f5367becb87"
+    },
+    "tenantId" : {
+      "entityType" : "TENANT",
+      "id" : "e70f33c0-1d7f-11ef-982c-0f5367becb87"
+    },
+    "userGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "c167c290-1e7e-11ef-982c-0f5367becb87"
+    },
+    "createdTime" : 1717132824964,
+    "id" : {
+      "entityType" : "GROUP_PERMISSION",
+      "id" : "7c257440-1f0d-11ef-982c-0f5367becb87"
+    },
+    "name" : "GROUP_[c167c290-1e7e-11ef-982c-0f5367becb87]_[07f24f50-1da3-11ef-982c-0f5367becb87]_[7bb8a8b0-1f0d-11ef-982c-0f5367becb87]_[ENTITY_VIEW]",
+    "public" : false
+  }, {
+    "entityGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "8eadcca0-1f0f-11ef-982c-0f5367becb87"
+    },
+    "entityGroupType" : "ENTITY_VIEW",
+    "roleId" : {
+      "entityType" : "ROLE",
+      "id" : "07f24f50-1da3-11ef-982c-0f5367becb87"
+    },
+    "tenantId" : {
+      "entityType" : "TENANT",
+      "id" : "e70f33c0-1d7f-11ef-982c-0f5367becb87"
+    },
+    "userGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "c167c290-1e7e-11ef-982c-0f5367becb87"
+    },
+    "createdTime" : 1717133715385,
+    "id" : {
+      "entityType" : "GROUP_PERMISSION",
+      "id" : "8ee0ea90-1f0f-11ef-982c-0f5367becb87"
+    },
+    "name" : "GROUP_[c167c290-1e7e-11ef-982c-0f5367becb87]_[07f24f50-1da3-11ef-982c-0f5367becb87]_[8eadcca0-1f0f-11ef-982c-0f5367becb87]_[ENTITY_VIEW]",
+    "public" : false
+  }, {
+    "entityGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "b920d690-1e87-11ef-982c-0f5367becb87"
+    },
+    "entityGroupType" : "DASHBOARD",
+    "roleId" : {
+      "entityType" : "ROLE",
+      "id" : "07f24f50-1da3-11ef-982c-0f5367becb87"
+    },
+    "tenantId" : {
+      "entityType" : "TENANT",
+      "id" : "e70f33c0-1d7f-11ef-982c-0f5367becb87"
+    },
+    "userGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "c167c290-1e7e-11ef-982c-0f5367becb87"
+    },
+    "createdTime" : 1717075374921,
+    "id" : {
+      "entityType" : "GROUP_PERMISSION",
+      "id" : "b9409390-1e87-11ef-982c-0f5367becb87"
+    },
+    "name" : "GROUP_[c167c290-1e7e-11ef-982c-0f5367becb87]_[07f24f50-1da3-11ef-982c-0f5367becb87]_[b920d690-1e87-11ef-982c-0f5367becb87]_[DASHBOARD]",
+    "public" : false
+  }, {
+    "entityGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "eb2cebf0-1e88-11ef-982c-0f5367becb87"
+    },
+    "entityGroupType" : "DEVICE",
+    "roleId" : {
+      "entityType" : "ROLE",
+      "id" : "07f24f50-1da3-11ef-982c-0f5367becb87"
+    },
+    "tenantId" : {
+      "entityType" : "TENANT",
+      "id" : "e70f33c0-1d7f-11ef-982c-0f5367becb87"
+    },
+    "userGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "c167c290-1e7e-11ef-982c-0f5367becb87"
+    },
+    "createdTime" : 1717075888465,
+    "id" : {
+      "entityType" : "GROUP_PERMISSION",
+      "id" : "eb592c10-1e88-11ef-982c-0f5367becb87"
+    },
+    "name" : "GROUP_[c167c290-1e7e-11ef-982c-0f5367becb87]_[07f24f50-1da3-11ef-982c-0f5367becb87]_[eb2cebf0-1e88-11ef-982c-0f5367becb87]_[DEVICE]",
+    "public" : false
+  }, {
+    "entityGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "7bb8a8b0-1f0d-11ef-982c-0f5367becb87"
+    },
+    "entityGroupType" : "ENTITY_VIEW",
+    "roleId" : {
+      "entityType" : "ROLE",
+      "id" : "07f24f50-1da3-11ef-982c-0f5367becb87"
+    },
+    "tenantId" : {
+      "entityType" : "TENANT",
+      "id" : "e70f33c0-1d7f-11ef-982c-0f5367becb87"
+    },
+    "userGroupId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "c167c290-1e7e-11ef-982c-0f5367becb87"
+    },
+    "createdTime" : 1719834124445,
+    "id" : {
+      "entityType" : "GROUP_PERMISSION",
+      "id" : "f01b34d0-379e-11ef-b789-8bf9281d7591"
+    },
+    "name" : "GROUP_[c167c290-1e7e-11ef-982c-0f5367becb87]_[07f24f50-1da3-11ef-982c-0f5367becb87]_[7bb8a8b0-1f0d-11ef-982c-0f5367becb87]_[ENTITY_VIEW]",
+    "public" : false
+  } ]
+}

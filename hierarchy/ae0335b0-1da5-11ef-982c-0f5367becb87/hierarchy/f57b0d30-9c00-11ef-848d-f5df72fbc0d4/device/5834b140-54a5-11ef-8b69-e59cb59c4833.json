@@ -8,7 +8,7 @@
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+      "id" : "f57b0d30-9c00-11ef-848d-f5df72fbc0d4"
     },
     "deviceData" : {
       "configuration" : {
@@ -20,50 +20,62 @@
     },
     "deviceProfileId" : {
       "entityType" : "DEVICE_PROFILE",
-      "id" : "90f5e7e0-a7c7-11ef-848d-f5df72fbc0d4"
+      "id" : "b91885f0-1d86-11ef-982c-0f5367becb87"
     },
     "externalId" : null,
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "5834b140-54a5-11ef-8b69-e59cb59c4833"
     },
-    "label" : "Inverter-16",
-    "name" : "Mal660-INV-16",
+    "label" : "DG-1",
+    "name" : "BP720-DG-1",
     "ownerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+      "id" : "f57b0d30-9c00-11ef-848d-f5df72fbc0d4"
     },
     "softwareId" : null,
-    "type" : "MAL_INV"
+    "type" : "DG"
   },
   "credentials" : {
-    "credentialsId" : "ubybmhS9EL7BHhVvpasV",
+    "credentialsId" : "6swlJxx9gdNHb7l67AGo",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
   "relations" : [ {
     "additionalInfo" : [ {
-      "label" : "Inverter-16"
+      "label" : "DG-1"
     } ],
     "from" : {
       "entityType" : "ASSET",
-      "id" : "5bc11b90-a663-11ef-848d-f5df72fbc0d4"
+      "id" : "ee672720-9c02-11ef-848d-f5df72fbc0d4"
     },
     "to" : {
       "entityType" : "DEVICE",
-      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+      "id" : "5834b140-54a5-11ef-8b69-e59cb59c4833"
     },
     "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "43bb3ef0-1d87-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5834b140-54a5-11ef-8b69-e59cb59c4833"
+    },
+    "type" : "ManagedByIntegration",
     "typeGroup" : "COMMON"
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ {
-      "booleanValue" : true,
+      "booleanValue" : false,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1734624767995,
+      "lastUpdateTs" : 1731244206916,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -71,16 +83,16 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1734606445273,
-      "longValue" : 1734606445271,
+      "lastUpdateTs" : 1731244206916,
+      "longValue" : 1731244206909,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1736159084720,
-      "longValue" : 1736159083093,
+      "lastUpdateTs" : 1731243548453,
+      "longValue" : 1731243547499,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ ]

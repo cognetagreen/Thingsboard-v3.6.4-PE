@@ -1,0 +1,101 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "7bf7f790-1d8c-11ef-982c-0f5367becb87"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "7bdaab90-1d8c-11ef-982c-0f5367becb87"
+    },
+    "name" : "avg load",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 680,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7bf622d0-1d8c-11ef-982c-0f5367becb87"
+      },
+      "name" : "avg_load_power",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 357,
+        "layoutY" : 145
+      },
+      "configuration" : {
+        "direction" : "FROM",
+        "relationType" : "Contains",
+        "deduplicationInSec" : 60,
+        "aggMappings" : [ {
+          "sourceScope" : "LATEST_TELEMETRY",
+          "source" : "AGC4_POWER_cal",
+          "defaultValue" : 0,
+          "aggFunction" : "AVG",
+          "target" : "avgAGC4Power",
+          "filter" : {
+            "clientAttributeNames" : [ ],
+            "sharedAttributeNames" : [ ],
+            "serverAttributeNames" : [ ],
+            "latestTsKeyNames" : [ "AGC4_POWER_cal" ],
+            "scriptLang" : "TBEL",
+            "filterFunction" : "return true;",
+            "tbelFilterFunction" : "return true;"
+          }
+        } ],
+        "outMsgType" : "POST_TELEMETRY_REQUEST"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7bf7f790-1d8c-11ef-982c-0f5367becb87"
+      },
+      "name" : "avgLoad",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNodeV2"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

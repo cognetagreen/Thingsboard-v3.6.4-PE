@@ -1,0 +1,262 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "beba61e0-814f-11ef-b45a-63918778ec19"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "d8112050-1d8d-11ef-982c-0f5367becb87"
+    },
+    "name" : "Grid out status",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 0,
+      "type" : "True"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "True"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 6,
+      "type" : "True"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 1,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 3,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 599,
+        "layoutY" : 337
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nvar FrequencyLimit = 50; // Deviate From 10%\n\nif(msg.Grid_AVG_Frequency >= (FrequencyLimit - FrequencyLimit/10) || msg.Grid_AVG_Frequency <= (FrequencyLimit + FrequencyLimit/10)) {\n    newMsg.Grid_Out = 0; // ON / true\n} else {\n    newMsg.Grid_Out =  1; // OFF / false\n}\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: grid, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d827dca0-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "grid out",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 744,
+        "layoutY" : 138
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d8282ac0-1d8d-11ef-982c-0f5367becb87"
+      },
+      "name" : "grid out",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 439,
+        "layoutY" : 140
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"Meter\") {\n    return true;\n} else {\n    return false;\n}",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "beb90250-814f-11ef-b45a-63918778ec19"
+      },
+      "name" : "Type Filter Meter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 192,
+        "layoutY" : 29
+      },
+      "configuration" : {
+        "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "POST_TELEMETRY_REQUEST", "TO_SERVER_RPC_REQUEST" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "beba61e0-814f-11ef-b45a-63918778ec19"
+      },
+      "name" : "M1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 367,
+        "layoutY" : 238
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata.deviceType == \"inv_agg\") {\n    return true;\n} else {\n    return false;\n}\n\n",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9de2a240-817f-11ef-b45a-63918778ec19"
+      },
+      "name" : "Type filter inv_agg",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 665,
+        "layoutY" : 410
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nvar FrequencyLimit = 50; // Deviate From 10%\n\n\nif(msg.Grid_AVG_Frequency >= (FrequencyLimit - FrequencyLimit/10)&& msg.Grid_AVG_Frequency <= (FrequencyLimit + FrequencyLimit/10)) {\n    \n    newMsg.Grid_Out_Occurrence = 1; // Out / OFF / False\n}\n\n\nreturn {msg:newMsg}",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "faecfe40-817f-11ef-b45a-63918778ec19"
+      },
+      "name" : "Grid_Out_Occurrence",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 435,
+        "layoutY" : 421
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "DATA",
+        "clientAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Grid_Out_Occurrence" ],
+        "serverAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "getLatestValueWithTs" : true
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d72c0a10-8a02-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "prev value",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 688,
+        "layoutY" : 494
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nvar FrequencyLimit = 50; // Deviate From 10%\n\n\nvar currentTime = new Date().getTime();\nvar rangeTime = currentTime - (1000*60*8);\nif(msg.Grid_AVG_Frequency < (FrequencyLimit - FrequencyLimit/10) || msg.Grid_AVG_Frequency > (FrequencyLimit + FrequencyLimit/10)) {\n    if(msg.Grid_Out_Occurrence.ts >= rangeTime) {\n        newMsg.Grid_Out_Instance = 1;\n    }\n}\n\n\nreturn {msg:newMsg}",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f47f5c10-8a0d-11ef-848d-f5df72fbc0d4"
+      },
+      "name" : "instance",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

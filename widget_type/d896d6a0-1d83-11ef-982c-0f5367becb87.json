@@ -1,0 +1,32 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "comb22",
+    "name" : "comb2",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "timeseries",
+      "sizeX" : 7.5,
+      "sizeY" : 4.5,
+      "resources" : [ ],
+      "templateHtml" : "    <b></b>\n    <div class=\"cont2\" *ngIf=\"data\">\n        <div class=\"item12\">\n            <div id=\"item112\" class=\"itemcont\">\n                <b>{{(data[0] && data[0][\"data\"][0][1]) | number:'1.2-2' }} kW</b>\n                <img src=\"https://png.pngtree.com/png-vector/20191027/ourmid/pngtree-solar-panel-icon-design-template-vector-isolated-png-image_1879860.jpg\" class=\"responsive-img\">\n            </div>\n            <div class=\"itemcont2\">\n                <b>{{(data[1] && data[1][\"data\"][0][1]) | number:'1.2-2' }} kW</b>\n                <img src=\"https://www.6thenergy.com/wp-content/uploads/2022/11/diesel-generator-monitoring-1024x576.png\" style=\"height:30px; width:60px;\">\n            </div>\n        </div>\n        <div class=\"item22\">\n            <div id=\"item212\" class=\"itemcont\">\n                <b>{{(data[2] && data[2][\"data\"][0][1]) | number:'1.2-2' }} kW</b>\n                <img src=\"https://png.pngtree.com/element_our/png/20181214/real-estate-house-logo-graphic-design-template-vector-illustration-png_269514.jpg\" style=\"height:50px; width:80px;\">\n            </div>\n            <div class=\"itemcont2\">\n                <b>{{(data[3] && data[3][\"data\"][0][1]) | number:'1.2-2' }} kW</b>\n                <img src=\"https://img.freepik.com/premium-vector/supports-highvoltage-power-grid-vector-illustration-utility-electric-transmission-networks-power-lines-isolated-white-background_528104-865.jpg\" style=\"height:50px; width:60px;\">\n            </div>\n        </div>\n    </div>",
+      "templateCss" : "b {\n    color : #072a7a;\n    font-weight: 700;\n    letter-spacing: 1px;\n    margin-left: 10px;\n}\n.cont2 {\n    height: 85%;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-around;\n}\n\n.item12 {\n    height: 100%;\n    width: 30%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    border-right: 2px solid #aeafb0;\n}\n.item22 {\n    height: 100%;\n    width: 70%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    align-items: center;\n    /*background: red;*/\n}\n.itemcont2 {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n#item112 {\n    height: 50%;    \n    border-bottom: 2px solid #aeafb0;\n\n}\n#item212 {\n    /*height: 100%;*/\n    width: 45%;\n    border-right: 2px solid #aeafb0;\n}\n.responsive-img {\n    max-width: 100%;\n    height: 65%;\n}\n",
+      "controllerScript" : "    \r\n    \r\n    self.onInit = function() {\r\n       self.ctx.$scope.data = self.ctx.defaultSubscription.data;\r\n        \r\n    }\r\n        \r\n    self.onDataUpdated = function() {\r\n        self.ctx.detectChanges();\r\n    }\r\n",
+      "settingsSchema" : "{}",
+      "dataKeySettingsSchema" : "{}\n",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"function\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random\",\"color\":\"#2196f3\",\"settings\":{},\"_hash\":0.15479322438769105,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"},{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random 2\",\"color\":\"#4caf50\",\"settings\":{},\"_hash\":0.8088811993350675,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"},{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random 3\",\"color\":\"#f44336\",\"settings\":{},\"_hash\":0.8149001069154764,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"},{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random 4\",\"color\":\"#ffc107\",\"settings\":{},\"_hash\":0.8410678502731261,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}],\"alarmFilterConfig\":{\"statusList\":[\"ACTIVE\"]}}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":false,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{},\"title\":\"comb2\",\"useDashboardTimewindow\":false,\"displayTimewindow\":true,\"dropShadow\":true,\"enableFullscreen\":true,\"enableDataExport\":false,\"widgetStyle\":{},\"widgetCss\":\"\",\"pageSize\":1024,\"noDataDisplayMessage\":\"\"}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "d896d6a0-1d83-11ef-982c-0f5367becb87"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
