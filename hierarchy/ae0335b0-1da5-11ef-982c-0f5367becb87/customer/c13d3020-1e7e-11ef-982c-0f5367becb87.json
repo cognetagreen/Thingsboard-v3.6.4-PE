@@ -1,0 +1,54 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "{\n\"Plant_Name\" : \"PV.Brilliant Printers\",\n\"Capacity\" : {\n\"Capacity\" : 720\n},\n\"Energy_System\" : \"Grid Connected\",\n\"AC_Capacity\" : 720,\n\"DC_Capacity\" : 720,\n\"Latitude\":13.7774154,\n\"Longitude\":77.3136672,\n\"Inverter_Make_Model\" : \"Sungrow 125 HX\",\n\"Inverter_AC_Capacity\":120,\n\"Inverter_DC_Capacity\":125,\n\"DG_Make_Model\":\"Cumins ABC\",\n\"DG_AC_Capacity\":1000\n}",
+      "allowWhiteLabeling" : true,
+      "homeDashboardId" : null,
+      "homeDashboardHideToolbar" : true
+    },
+    "address" : null,
+    "address2" : null,
+    "city" : "Bangalore",
+    "country" : "India",
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "email" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "name" : "PV.Brilliant Printer 720 kW",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "parentCustomerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "phone" : null,
+    "state" : "Karnataka",
+    "title" : "PV.Brilliant Printer 720 kW",
+    "zip" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c13d3020-1e7e-11ef-982c-0f5367becb87"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b93a65d0-1d86-11ef-982c-0f5367becb87"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
