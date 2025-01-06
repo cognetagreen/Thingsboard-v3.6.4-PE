@@ -1,0 +1,88 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : false,
+      "overwriteActivityTime" : false,
+      "description" : ""
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "90f5e7e0-a7c7-11ef-848d-f5df72fbc0d4"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+    },
+    "label" : "Inverter-16",
+    "name" : "Mal660-INV-16",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+    },
+    "softwareId" : null,
+    "type" : "MAL_INV"
+  },
+  "credentials" : {
+    "credentialsId" : "ubybmhS9EL7BHhVvpasV",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : [ {
+      "label" : "Inverter-16"
+    } ],
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "5bc11b90-a663-11ef-848d-f5df72fbc0d4"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "584d3830-a72c-11ef-848d-f5df72fbc0d4"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1734624767995,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1734606445273,
+      "longValue" : 1734606445271,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1736157581733,
+      "longValue" : 1736157581695,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

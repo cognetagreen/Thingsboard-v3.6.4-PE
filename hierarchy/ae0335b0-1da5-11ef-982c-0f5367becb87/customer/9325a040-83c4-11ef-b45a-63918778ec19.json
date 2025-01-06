@@ -1,0 +1,42 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "{\n\"Plant_Name\" : \"Hybrid.Maldives\",\n\"Capacity\" : {\n\"Capacity\" : 680,\n\"BESS Capacity\" : 400,\n\"DG Capacity\" : 3200\n},\n\"Energy_System\" : \"Captive & Off-Grid\",\n\"Latitude\" : 4.2695,\n\"Longitude\" : 73.4909,\n\"AC_Capacity\" : 680,\n\"country\" : \"Maldives\",\n\"timeZone\" : \"Asia/Colombo\",\n\"type\" : \"PV-DG-BESS\",\n\"image_url\" : \"https://www.solarfeeds.com/mag/wp-content/uploads/2019/11/rsz_solar-energy-system-panels-power-cells-farms-pr52k9e.png\",\n\"commissioned\" : \"15 November 2024\",\n\"pv_capacity\" : \"660 kW, Huawei ktl Series\",\n\"bess_capacity\" : \"200 kWh*2, Huawei Luna 2000\",\n\"dg_capacity\" : \"3200 kW\",\n\"location\" : \"Bandos, Maldives\"\n}",
+      "allowWhiteLabeling" : true,
+      "homeDashboardId" : null,
+      "homeDashboardHideToolbar" : true
+    },
+    "address" : null,
+    "address2" : null,
+    "city" : "bandos",
+    "country" : "Maldives",
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "email" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "9325a040-83c4-11ef-b45a-63918778ec19"
+    },
+    "name" : "Hybrid.Maldives 660 kW",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "parentCustomerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ae0335b0-1da5-11ef-982c-0f5367becb87"
+    },
+    "phone" : null,
+    "state" : null,
+    "title" : "Hybrid.Maldives 660 kW",
+    "zip" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
