@@ -160,7 +160,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var newMsg = {};\n\nif(metadata.deviceType == \"inv_agg\") {\n    newMsg.Load_Power = (msg.INV_Total_Power? msg.INV_Total_Power : 0) + (msg.DG_Total_Power ? msg.DG_Total_Power : 0) + (msg.Total_Grid_Power ? msg.Total_Grid_Power : 0) + (msg.PCS_Total_Power ?  (msg.PCS_Total_Power >= 0 ? msg.PCS_Total_Power : 0) : 0);\n    if(msg.Load_Power <= 0) {\n        msg.Load_Loss = 1;\n    }\n}\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "jsScript" : "var newMsg = {};\n\nif(metadata.deviceType == \"inv_agg\") {\n    newMsg.Load_Power = parseFloat(msg.INV_Total_Power) + parseFloat(msg.DG_Total_Power) + (parseFloat(msg.PCS_Total_Power) ?  (parseFloat(msg.PCS_Total_Power) >= 0 ? parseFloat(msg.PCS_Total_Power) : 0) : 0);\n    if(parseFloat(msg.Load_Power) <= 0) {\n        msg.Load_Loss = 1;\n    }\n}\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
@@ -171,7 +171,7 @@
         "entityType" : "RULE_NODE",
         "id" : "176d6670-a978-11ef-848d-f5df72fbc0d4"
       },
-      "name" : "Fail Load Scrip",
+      "name" : "Maldieves Load Scrip",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
