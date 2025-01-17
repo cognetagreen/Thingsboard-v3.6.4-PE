@@ -6,10 +6,13 @@
     },
     "configuration" : null,
     "debugMode" : true,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "cc5ffd50-8159-11ef-b45a-63918778ec19"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "d9f306b0-8159-11ef-b45a-63918778ec19"
+      "id" : "dad8e7c0-cce5-11ef-aad0-5f8aea70db1f"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -36,6 +39,14 @@
       "fromIndex" : 4,
       "toIndex" : 2,
       "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 5,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 3,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
     "nodes" : [ {
@@ -49,11 +60,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206299,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9f306b0-8159-11ef-b45a-63918778ec19"
+        "id" : "dad8e7c0-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "M1",
       "queueName" : null,
@@ -73,11 +88,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736953503781,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "23bad020-815a-11ef-b45a-63918778ec19"
+        "id" : "dad8e7c1-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "Calculation",
       "queueName" : null,
@@ -97,11 +116,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206299,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a8834670-815a-11ef-b45a-63918778ec19"
+        "id" : "dad90ed0-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "Downtime",
       "queueName" : null,
@@ -121,11 +144,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206299,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "b6dcd420-815a-11ef-b45a-63918778ec19"
+        "id" : "dad90ed1-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "Plant Downtime",
       "queueName" : null,
@@ -149,21 +176,52 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206299,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "244d7b40-8a02-11ef-848d-f5df72fbc0d4"
+        "id" : "dad935e0-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "Plant_Down_Occurence",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 580,
+        "layoutY" : 370
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\n\nvar CurrentHR = new Date().getHours()\nvar currentTime = new Date().getTime();\nvar rangeTime = currentTime - 1000*60*8; // 8 min ago\nif(CurrentHR >= 6 && CurrentHR <= 18) {\n    if(msg.POA > 20 || msg.INV_Total_Power <= 0) {\n        \n        newMsg.Plant_Down_instance = 1;\n        newMsg.Plant_Down = 1; // True => plant is Down\n    } else {\n        newMsg.Plant_Availability = 1; // Plant is Available\n    }\n}\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : true
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1a060020-d350-11ef-92b7-538b49d7aa4c"
+      },
+      "name" : "Downtime",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },
-  "relations" : [ ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   }
