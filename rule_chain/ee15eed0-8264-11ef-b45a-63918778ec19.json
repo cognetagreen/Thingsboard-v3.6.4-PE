@@ -6,10 +6,13 @@
     },
     "configuration" : null,
     "debugMode" : true,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "ee15eed0-8264-11ef-b45a-63918778ec19"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "2c169fd0-8266-11ef-b45a-63918778ec19"
+      "id" : "daf178d0-cce5-11ef-aad0-5f8aea70db1f"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -48,6 +51,10 @@
       "fromIndex" : 4,
       "toIndex" : 2,
       "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 26,
+      "type" : "Failure"
     }, {
       "fromIndex" : 5,
       "toIndex" : 6,
@@ -120,6 +127,10 @@
       "fromIndex" : 24,
       "toIndex" : 25,
       "type" : "Success"
+    }, {
+      "fromIndex" : 26,
+      "toIndex" : 3,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
     "nodes" : [ {
@@ -133,11 +144,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "2c169fd0-8266-11ef-b45a-63918778ec19"
+        "id" : "daf178d0-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "m1",
       "queueName" : null,
@@ -157,11 +168,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9d5f5380-8266-11ef-b45a-63918778ec19"
+        "id" : "daf19fe0-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "INV",
       "queueName" : null,
@@ -171,8 +186,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 378,
-        "layoutY" : 119
+        "layoutX" : 391,
+        "layoutY" : 157
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -181,11 +196,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ab6edfe0-8266-11ef-b45a-63918778ec19"
+        "id" : "daf19fe1-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "Avail",
       "queueName" : null,
@@ -205,11 +224,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8f367d50-8267-11ef-b45a-63918778ec19"
+        "id" : "daf1c6f0-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "ddda",
       "queueName" : null,
@@ -233,11 +256,15 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "f0a12df0-82ae-11ef-b45a-63918778ec19"
+        "id" : "daf1c6f1-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "avail fetch",
       "queueName" : null,
@@ -262,15 +289,20 @@
             "entityTypes" : [ ]
           } ],
           "fetchLastLevelOnly" : false
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "faf80d30-82b0-11ef-b45a-63918778ec19"
+        "id" : "daf1ee00-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "To Durtek Device",
       "queueName" : null,
@@ -290,11 +322,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "242fcf30-82b1-11ef-b45a-63918778ec19"
+        "id" : "daf1ee01-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "dew",
       "queueName" : null,
@@ -318,11 +354,15 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d4ab7ce0-82b3-11ef-b45a-63918778ec19"
+        "id" : "daf1ee02-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "fetch inverter wise avail",
       "queueName" : null,
@@ -342,11 +382,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fab07580-82b3-11ef-b45a-63918778ec19"
+        "id" : "daf21510-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "avg inv avail",
       "queueName" : null,
@@ -371,15 +415,20 @@
             "entityTypes" : [ ]
           } ],
           "fetchLastLevelOnly" : false
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "1908ea30-82b9-11ef-b45a-63918778ec19"
+        "id" : "daf21511-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "to durtek device",
       "queueName" : null,
@@ -399,11 +448,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d7e2cb60-82b9-11ef-b45a-63918778ec19"
+        "id" : "daf23c20-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "save total avail",
       "queueName" : null,
@@ -423,11 +476,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fbd10e70-9d93-11ef-848d-f5df72fbc0d4"
+        "id" : "daf23c21-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "durtek inv",
       "queueName" : null,
@@ -447,11 +504,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9787e140-9d94-11ef-848d-f5df72fbc0d4"
+        "id" : "daf23c22-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "brilliant inv",
       "queueName" : null,
@@ -476,15 +537,20 @@
             "entityTypes" : [ ]
           } ],
           "fetchLastLevelOnly" : false
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "b39064c0-9d94-11ef-848d-f5df72fbc0d4"
+        "id" : "daf23c23-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "to cal",
       "queueName" : null,
@@ -504,11 +570,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d12358d0-9d94-11ef-848d-f5df72fbc0d4"
+        "id" : "daf26330-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "save br",
       "queueName" : null,
@@ -532,11 +602,15 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "0575d130-9d95-11ef-848d-f5df72fbc0d4"
+        "id" : "daf26331-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "Avail INV wise",
       "queueName" : null,
@@ -561,15 +635,20 @@
             "entityTypes" : [ ]
           } ],
           "fetchLastLevelOnly" : false
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "47bea8a0-9d95-11ef-848d-f5df72fbc0d4"
+        "id" : "daf28a40-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "to cal",
       "queueName" : null,
@@ -589,11 +668,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "47becfb0-9d95-11ef-848d-f5df72fbc0d4"
+        "id" : "daf28a41-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "save",
       "queueName" : null,
@@ -613,11 +696,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e26fb950-9d97-11ef-848d-f5df72fbc0d4"
+        "id" : "daf28a42-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "avg inv avail",
       "queueName" : null,
@@ -637,11 +724,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "afd563b0-a7c8-11ef-848d-f5df72fbc0d4"
+        "id" : "daf2b150-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "Maldives Inverter",
       "queueName" : null,
@@ -666,15 +757,20 @@
             "entityTypes" : [ ]
           } ],
           "fetchLastLevelOnly" : false
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "17b7a0b0-a7c9-11ef-848d-f5df72fbc0d4"
+        "id" : "daf2b151-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "To Mal_Devices",
       "queueName" : null,
@@ -694,11 +790,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a1112c50-a7d3-11ef-848d-f5df72fbc0d4"
+        "id" : "daf2b152-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "save mal_devices",
       "queueName" : null,
@@ -722,11 +822,15 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "cec093c0-a7d3-11ef-848d-f5df72fbc0d4"
+        "id" : "daf2d860-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "Avail INV wise",
       "queueName" : null,
@@ -746,11 +850,15 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "0545caa0-a7d4-11ef-848d-f5df72fbc0d4"
+        "id" : "daf2d861-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "avg inv avail",
       "queueName" : null,
@@ -775,15 +883,20 @@
             "entityTypes" : [ ]
           } ],
           "fetchLastLevelOnly" : false
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "38f9e020-a7d4-11ef-848d-f5df72fbc0d4"
+        "id" : "daf2ff70-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "To Mal_Devices",
       "queueName" : null,
@@ -803,17 +916,49 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736248206461,
+        "failuresEnabled" : true
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "4aa5cd20-a7d4-11ef-848d-f5df72fbc0d4"
+        "id" : "daf2ff71-cce5-11ef-aad0-5f8aea70db1f"
       },
       "name" : "save",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 265,
+        "layoutY" : 108
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\nvar replace = metadata.deviceName.split(\"-\")[2];\nvar startrHr = 6;\nvar endHr = 19;\nvar TotalOperationMin = (endHr - startrHr) * 60;\nvar currentHr = new Date().getHours();\n\nif(currentHr >= startrHr && currentHr <= endHr) {\n    newMsg.Inverter_Availability = 0 - (msg.AC_Active_Power_Watt > 0 ? 0 : (5/TotalOperationMin)*100);\n    newMsg[\"Inverter_Availability_\"+replace] = newMsg.Inverter_Availability; // This is for cal to aggregate\n}\n var hrs = new Date().getHours();\n \n if(hrs == 0) {\n     newMsg.Inverter_Availability = 100; // It will refresh the Daily Availability\n      newMsg[\"Inverter_Availability_\"+replace] = newMsg.Inverter_Availability;\n }\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1736951782497,
+        "failuresEnabled" : true
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fef0b310-d34b-11ef-92b7-538b49d7aa4c"
+      },
+      "name" : "Failure",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },
